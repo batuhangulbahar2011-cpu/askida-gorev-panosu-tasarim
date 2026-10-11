@@ -1,4 +1,4 @@
-# Teknoloji karşılaştırması ve öneri
+﻿# Teknoloji karşılaştırması ve öneri
 
 Bu aşamanın teslimi tasarımdır. Aşağıdaki seçenekler seçilen tasarımın sonraki uygulaması içindir; şu an kurulum veya sunucu yayını yapılmaz.
 
@@ -32,7 +32,7 @@ Web sunucusu + tek uygulama
 SQLite: kullanıcı + istek + adaylık + yorum + olay + bildirim
 ```
 
-Her ekran aynı kaynağı okur. Danışman verisi istemciye gönderilip CSS ile saklanmaz; sunucu yetkisiz isteği reddeder. Arayüz düzenli yeniden yükleme ile güncellenebilir; ilk pilot için gerçek zamanlı bağlantı, mağaza dağıtımı veya push şart değildir. 12/48 saat kuyruğu olay zamanlarından hesaplanır; uygulama başlangıcında ve günlük kontrolde görünür. İnternet yayınına geçilirse HTTPS ve güvenli oturum çerezleri gerekir; geliştirme sunucusu doğrudan yayınlanmaz. Dağıtım sağlayıcısı bu taslakta seçilmedi.
+Her ekran aynı kaynağı okur. Danışman verisi istemciye gönderilip CSS ile saklanmaz; sunucu yetkisiz isteği reddeder. Arayüz düzenli yeniden yükleme ile güncellenebilir; ilk pilot için gerçek zamanlı bağlantı, mağaza dağıtımı veya push şart değildir. 48 saatlik danışman kuyruğu olay zamanlarından hesaplanır; sayfa açıldığında ve günlük kontrolde görünür. İnternet yayınına geçilirse HTTPS ve güvenli oturum çerezleri gerekir; geliştirme sunucusu doğrudan yayınlanmaz. Dağıtım sağlayıcısı bu taslakta seçilmedi.
 
 ## Dayanışma Ağı ile ilişki
 

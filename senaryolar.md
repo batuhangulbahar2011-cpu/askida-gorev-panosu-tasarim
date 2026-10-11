@@ -46,10 +46,10 @@ Senaryolar aynı `roller.md`, `akis.md`, `veri.md` ve `ekranlar.md` kuralların�
 
 **Son durum:** uygunsuz görev takım katkısına dönüşmemiş, kişisel ihtiyaç ayrı talep olarak tamamlanmıştır. Otomatik kusursuz niyet tespiti iddia edilmez.
 
-## 5. Yapıldı bildirimi 48 saat onaysız kalır
+## 5. Yapıldı bildirimi 48 saat onaysız kalır (tek eşik)
 
 1. Hakkı üstlendiği görevi pazartesi 10:00 İstanbul saatinde Yapıldı bildirir; saat UTC olay kaydına yazılır.
-2. Pazartesi 22:00'da 12 saat olur; Arda ilgili detayı açtığında veya yenilediğinde hatırlatma belirir; ayrı mesaj tablosuna ihtiyaç yoktur.
+2. Arda ilgili detayı açana kadar bir şey olmaz; iş panoda “Onay bekliyor” olarak görünür. Ayrı hatırlatma yoktur.
 3. Çarşamba 10:00'da 48 saat olur; görev danışman inceleme kuyruğuna girer. Hâlâ onay bekliyor ve takım sayımı değişmemiştir.
 4. Özgür sonuç notunu ve tarafların ortak yorumunu inceler; işi yeterli bulursa “48 saatlik bekleme sonrası sonucu inceledim” gerekçesiyle onaylar. Alternatif olarak düzeltme, yeniden açma veya iptal kararı verebilir.
 5. Onay dalında arşiv ve tek görev sayımı oluşur. Sonradan Arda'nın eski onay butonuna basması ikinci onay üretmez.

@@ -13,15 +13,15 @@ stateDiagram-v2
     ustlenildi --> onay_bekliyor: Üstlenen yapıldı bildirir
     onay_bekliyor --> ustlenildi: Sahip düzeltme ister
     onay_bekliyor --> onaylandi: Sahip sonucu onaylar
-    onaylandi --> arsiv: Aynı işlemde arşivle
+    onaylandi --> kapandi: Aynı işlemde kapat
     ustlenildi --> acik: Üstlenen bırakır
     onay_bekliyor --> acik: Üstlenen bırakır
-    acik --> iptal: Sahip geri çeker
-    ustlenildi --> iptal: Sahip geri çeker
-    onay_bekliyor --> iptal: Sahip geri çeker
+    acik --> kapandi: Sahip geri çeker
+    ustlenildi --> kapandi: Sahip geri çeker
+    onay_bekliyor --> kapandi: Sahip geri çeker
 ```
 
-`onaylandi` kabul olayını temsil eder, bekleyen ayrı bir veritabanı durumu değildir. İşlem sonunda durum `arsiv` olur ve `onaylandi` olayı yazılır. `iptal` kayıtları arşiv ekranında ayrı filtrede görünür; tamamlanmış sayılmaz. Saklanan durumlar: `acik`, `ustlenildi`, `onay_bekliyor`, `arsiv`, `iptal`.
+`onaylandi` kabul olayını temsil eder, bekleyen ayrı bir veritabanı durumu değildir. İşlem sonunda durum `kapandi` olur ve `onaylandi` olayı yazılır. Geri çekme de aynı `kapandi` durumuna gider; fark olaydadır (`onaylandi` veya `geri_cekildi`). Arşiv ekranı bu olaya bakarak onaylananları ve iptal edilenleri ayrı filtrede gösterir; iptal tamamlanmış sayılmaz. Saklanan durumlar dörttür: `acik`, `ustlenildi`, `onay_bekliyor`, `kapandi`.
 
 ## Geçiş sözleşmesi
 
@@ -31,20 +31,22 @@ stateDiagram-v2
 | Aday ol | Açık, aktif hesap, sahibi değil | Bekleyen adaylık; pano durumu değişmez |
 | Adaylıktan vazgeç | Kendi bekleyen adaylığı | Geri çekildi; istek açık kalır |
 | Kabul et | Sahip; açık; bekleyen aktif aday | Üstlenildi; seçilen kabul, diğer bekleyenler seçilmedi |
-| Yapıldı | Üstlenen; üstlenildi; sonuç notu | Onay bekliyor; 12/48 saat sayacı başlar |
+| Yapıldı | Üstlenen; üstlenildi; sonuç notu | Onay bekliyor; 48 saat sayacı başlar |
 | Düzeltme iste | Sahip; onay bekliyor; açıklama zorunlu | Üstlenildi; üstlenen korunur, sayaç sıfırlanır |
-| Onayla | Sahip; onay bekliyor | Arşiv; tek onay olayı, türe göre bir tamamlanma sayılır |
+| Onayla | Sahip; onay bekliyor | Kapandı (arşivde görünür); tek onay olayı, türe göre bir tamamlanma sayılır |
 | Bırak | Üstlenen; üstlenildi/onay bekliyor; neden zorunlu | Açık; üstlenen/sayaç temizlenir, eski adaylıklar tekrar canlanmaz |
-| Geri çek | Sahip; aktif üç durumdan biri; neden zorunlu | İptal; adaylıklar kapanır; onay/katkı sayılmaz |
+| Geri çek | Sahip; aktif üç durumdan biri; neden zorunlu | Kapandı (geri çekildi olayı); adaylıklar kapanır; onay/katkı sayılmaz |
 | Danışman kararı | Uyuşmazlık veya 48 saat aşımı; açıklama zorunlu | Onay, düzeltme, yeniden açma veya iptal; ilgili geçişin aynı kuralları |
 
-Sahip isteği yalnız açıkken düzenler; tür sonradan değiştirilmez. Yeniden açılmış istek düzenlenebilir, önceki adaylar yeniden başvurmalıdır. Arşiv ve iptal terminaldir; aynı ihtiyaç tekrar doğarsa yeni istek açılır. Yayımlanmış yorum ve olaylar sonradan değiştirilemez. Yanlış yorum için yeni düzeltme yorumu eklenir.
+Sahip isteği yalnız açıkken düzenler; tür sonradan değiştirilmez. Yeniden açılmış istek düzenlenebilir, önceki adaylar yeniden başvurmalıdır. Kapandı terminaldir; aynı ihtiyaç tekrar doğarsa yeni istek açılır. Yayımlanmış yorum ve olaylar sonradan değiştirilemez. Yanlış yorum için yeni düzeltme yorumu eklenir.
 
 ## Belgedeki beş sorunun cevabı
 
 1. **İki kişi aynı göreve talip olursa:** ikisinin adaylığı da görünür. Açan kişi gerekçeli seçim yapar; erken tıklamak öncelik hakkı değildir. Aynı anda iki kabul gelirse veritabanındaki tek işlem açık durum ve kayıt sürümünü kontrol eder; biri kazanır, diğeri “Bu istek güncellendi, yenileyin” görür. Üstlenen asla iki kişi olmaz.
 2. **Üstlenen yapamazsa:** detayda “Bırak” seçer, kısa neden ve varsa yarım kalan işin nerede kaldığını yazar, sonra onaylar. Bu not takımın görebildiği hareket kaydında kalır. Üstlenen temizlenir, istek tekrar açık olur. Eski adaylar otomatik atanmaz; yeniden başvurabilir. Bırakmak puan/ceza üretmez.
-3. **Yapıldı hiç onaylanmazsa:** Batu'nun 2026-10-09 kararı: yapıldı olayından 12 saat sonra sahip için detayda hatırlatma; 48 saat sonra danışman özeti kuyruğuna ekleme. Süre takvim saatiyle, UTC farkıyla ölçülür; hafta sonu durmaz. Otomatik başarı/onay yoktur. Danışman tarafların ortak yorumlarını inceleyerek gerekçeli karar verir. Eşikler sayfa açıldığında veya yenilendiğinde olay zamanından hesaplanır; eşik geçince ilgili hatırlatma/kuyruk görünür. Pilot için danışmanın kuyruğu günde bir kez kontrol etmesi önerilir; 48 saat incelemeye açılma eşiğidir, kararın aynı anda verileceği garantisi değildir. Hakem de üstlenen ise otomatik çözüm yok; sahip onayı gerekir.
+3. **Yapıldı hiç onaylanmazsa:** tek eşik vardır: Yapıldı bildirilmesinden 48 saat sonra iş danışmanın inceleme kuyruğuna girer. (10 Ekim öğretmen geri bildirimiyle sadeleştirildi: önceki 12 saatlik ayrı hatırlatma kaldırıldı; neden aşağıda.) Süre takvim saatiyle ölçülür; hafta sonu durmaz. Otomatik başarı/onay yoktur. Danışman tarafların ortak yorumlarını inceleyerek gerekçeli karar verir. Eşik sayfa açıldığında veya yenilendiğinde olay zamanından hesaplanır. Pilot için danışmanın kuyruğu günde bir kez kontrol etmesi önerilir; 48 saat incelemeye açılma eşiğidir, kararın aynı anda verileceği garantisi değildir. Hakem de üstlenen ise otomatik çözüm yok; sahip onayı gerekir.
+
+   *Neden 12 saat çıkarıldı:* iki ayrı eşik, küçük bir takım için iki ayrı kural ve iki ayrı ekran metni demekti; sahibin zaten onay bekleyen işi panoda "Onay bekliyor" olarak görünüyor. Tek eşik daha kolay anlatılır ve sınanır.
 4. **Son tarih:** görevde zorunlu, talepte isteğe bağlı. Geçmiş tarihli yeni istek açılamaz. Tarih, İstanbul saatine göre gün sonudur. Süre geçince “Gecikti” etiketi ve danışman kuyruğu oluşur; görev iptal edilmez. Açık isteğin sahibi gerekçeyle tarihi değiştirebilir; üstlenilmiş işte değişiklik için danışman uyuşmazlık kararını kullanır.
 5. **Açan geri çekebilir mi:** arşivlenmeden önce evet, neden yazar; üstlenen varsa form yapılan emeğin kayıtta kalacağını açıklar. Üstlenen buna ortak yorumla itiraz edebilir ve danışmana bildirebilir. İptal sonucu onaylanmış iş toplamına girmez. İptalin amacı işi kapatmaktır; işi görünmez silmek değildir.
 
