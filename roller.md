@@ -31,7 +31,9 @@ Kaptanın göreve aday olması öneridir; belge bunu açıkça söylemediği iç
 
 ## Hesap ve üyelik
 
-- Açık kayıt yoktur. İlk danışman hesabı kurulumda açılır; danışman takım hesaplarını oluşturur. Kullanıcı adı ve geçici parola kişiye yüz yüze verilir; ilk girişte parola değiştirilir. Telefon/e-posta istenmez.
+- İlk danışman hesabı site kurulurken oluşturulur; danışman kendi parolasını belirler. Sonraki kayıtlar danışmanın ürettiği tek kullanımlık kayıt koduyla yapılır. Form: ad, benzersiz kullanıcı adı, kayıt kodu, parola ve parola tekrarı. Yeni hesap her zaman üyedir; rolü yalnız danışman değiştirir. Sonraki giriş kullanıcı adı/parolayladır. Telefon/e-posta istenmez.
+- Kayıt kodu bir kayıtta tüketilir; kullanılmadıysa oluşturulduktan 7 gün sonra geçersizleşir. Danışman kullanılmamış kodu iptal edebilir.
+- Üye parolasını unutursa danışman kimliğini doğrular ve o hesaba özel tek kullanımlık yenileme kodu üretir. Kod 24 saat geçerlidir; kişi yeni parolasını kendi belirler. İlk/tek danışman için aynı işlemi kimlik doğrulaması sonrası bakım sorumlusu Batu kurulum erişimiyle yapar. Hesap/geçmiş korunur; bakım erişimi site rolünden ayrıdır.
 - Danışman pasif hesabı yeniden etkinleştirebilir. Son aktif danışman pasifleştirilemez veya başka role indirilemez.
 - Rol değişikliği her işlemde sunucuda kontrol edilir; eski açık tarayıcı sekmesi yetki sağlamaz.
 - Kaptan üyeye dönünce yeni görev açamaz. Önceden açtığı görevlerde sahip olarak kabul/onay/geri çekme devam eder; iş sahipsiz bırakılmaz.

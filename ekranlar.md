@@ -1,6 +1,6 @@
 # Ekran taslakları
 
-Tüm ekranlar giriş yapmış aktif takım üyelerine açıktır; danışman özeti ve takım yönetimi yalnız danışmana. Girişte kullanıcı adı/parola, ilk girişte parola değişimi vardır. Mobilde tek sütun, bilgisayarda geniş liste kullanılır. Türkçe etiketler, klavyeyle erişilebilir butonlar ve renk yanında yazılı durum etiketleri bulunur. Taslak çizimlerdeki örnekler gerçek faaliyet kaydı değildir.
+Tüm ekranlar giriş yapmış aktif takım üyelerine açıktır; danışman özeti ve takım yönetimi yalnız danışmana. Kayıtta ad/kullanıcı adı/tek kullanımlık kayıt kodu ve kişinin kendi parolası vardır; yeni hesap üye olur. Sonraki giriş kullanıcı adı/parolayladır. Mobilde tek sütun, bilgisayarda geniş liste kullanılır. Türkçe etiketler, klavyeyle erişilebilir butonlar ve renk yanında yazılı durum etiketleri bulunur. Taslak çizimlerdeki örnekler gerçek faaliyet kaydı değildir.
 
 ## 1. Pano — açık istekler
 
@@ -114,7 +114,7 @@ Kuyrukta geciken onay, geciken son tarih ve açık bildirim ayrı etiketlerdir. 
 ```text
 +----------------------------------------------------+
 | Takım yönetimi · yalnız danışman                   |
-| [Üye ekle]                                        |
+| [Kayıt kodu üret]                                 |
 | Selim  | Kaptan v | Aktif | [Kaydet]               |
 | Batu   | Üye v    | Aktif | [Pasifleştir]          |
 | Özgür  | Danışman | Aktif | Son danışman korunur   |
@@ -122,8 +122,10 @@ Kuyrukta geciken onay, geciken son tarih ve açık bildirim ayrı etiketlerdir. 
 +----------------------------------------------------+
 ```
 
-Pasifleştirme öncesi devredilecek sahiplik ve tekrar açılacak işler listelenir. Parola sıfırlama yalnız kişinin yüz yüze talebi üzerine yapılır; geçici parola ilk girişte değişir. Dönemi kapatma yalnız aktif istek yokken kullanılabilir; 90 günlük silme zamanı önizlenir. Sistem ayarları takım toplamları veya kişi sıralaması içermez.
+Pasifleştirme öncesi devredilecek sahiplik ve tekrar açılacak işler listelenir. Parola yenilemede danışman kimliği doğrular; hesaba özel tek kullanımlık 24 saatlik kod verir ve kişi yeni parolasını kendisi belirler. Dönemi kapatma yalnız aktif istek yokken kullanılabilir; 90 günlük silme zamanı önizlenir. Sistem ayarları takım toplamları veya kişi sıralaması içermez.
 
 ## Görünürlük
 
 Aday listesi çizimi yalnız sahibi görünümüdür. Aday kendi kaydını görür; diğer üyeler seçilmeyenleri ve aday sayılarını görmez. Danışman bildirilen sorunu incelerken erişebilir. Teklif kutusu bu erişimi açıklar; ortak yorum kutusu tüm takımın göreceğini belirtir. Seçilmeyen kişiye nazik bildirim gösterilir.
+
+Danışman yönetimi üyeler/roller/parola yenileme, kayıt kodları, inceleme kuyruğu ve ayrı faaliyet özeti bölümlerini içerir.

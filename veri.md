@@ -12,7 +12,7 @@ Bu model tek takım içindir. İleride çok takım gereksinimi çıkmadan okul, 
 | password_hash | algoritma+tuz+özet | Parolayı açık metin saklamadan giriş doğrulamak |
 | role | uye | Eylem izinlerini belirlemek; uye/kaptan/danisman |
 | active | true | Ayrılan hesabı erişimden çıkarmak, geçmiş izi korumak |
-| must_change_password | true | Danışmanın verdiği geçici parolayı ilk girişte değiştirmek |
+
 
 Kullanıcı adı 3–30 karakter, harf/rakam/alt çizgi; ad 1–60 karakter. Aynı kullanıcı adı tekrar kullanılmaz. Kimlikler sentetik örnektir, gerçek hesap kurulmamıştır.
 
@@ -117,6 +117,14 @@ Hata kaydında bu iki alan dışında kullanıcı adı, IP, cihaz, gövde veya s
 - Telefon, adres, doğum tarihi, fotoğraf/avatar, konum, okul/sınıf, beceri profili, cihaz kimliği, reklam/analitik takibi ve kişi performans dışa aktarımı tutulmaz. E-posta istemeyen hesap modeli kullanılır. GitHub tasarım reposunda gerçek kullanıcı hesabı, parola, çalışma DB'si veya gerçek takım faaliyet kaydı bulunmaz.
 - Altyapı erişim loglarında IP/cihaz takibi kapatılır; hata logları kimlik/parola/yorum gövdesi içermeyen teknik hata kodlarıyla, 7 gün süreyle tutulur. Bunlar pilotun ilave teknik saklama alanlarıdır; yalnız arıza bulmak içindir.
 
-## Adaylık görünürlüğü
+## Kodla kayıt, parola yenileme ve site içi bildirimler
 
-Adaylık ve teklif notunu istek sahibi ve ilgili aday görür. Danışman bildirilen sorunu inceleyebilir. Diğer üyelere aday sayıları/seçilmeyen kayıtlar gönderilmez. Adaylık olayları da aynı görünürlük kuralına tabidir. Site içi bildirimler yalnız alıcıya açıktır. Ortak yorumlar bütün takımca görülür; teklif notu özel sohbet değildir.
+| Kayıt | Asgari alanlar | Amaç / erişim |
+|---|---|---|
+| registration_codes | id, code_hash, created_by, created_at, expires_at, used_at, revoked_at | Tek kayıt; 7 gün; kullanılmadan iptal. Yönetimi yalnız danışman. Ham kod kalıcı saklanmaz/loglanmaz. |
+| password_reset_codes | id, code_hash, user_id, created_by, created_at, expires_at, used_at | Yalnız hedef hesap için tek kullanım, 24 saat. Üye için danışman; ilk danışman için kimlik kontrolü sonrası Batu bakım erişimi. |
+| notifications | id, recipient_id, request_id, kind, created_at, read_at | Yalnız alıcının bildirimleri; ilgili isteğe bağlantı. Seçim bildirimi başka adayın notunu taşımaz. |
+
+Parola tekrarı veritabanına yazılmaz; yalnız formda eşleşme kontrolüdür. Kod tüketimi ve hesap/parola işlemi tek veritabanı işleminde gerçekleşir. Kullanılmış/süresi dolmuş/iptal edilmiş kod işlem yapamaz.
+
+Adaylık satırı, notu ve olay geçmişi istek sahibi/ilgili aday için görünür; danışman bildirilen sorunu inceleyebilir. Ortak istek geçmişine tüm adaylık kayıtları gönderilmez. Parola yenileme/kayıt kodu alanları ortak yorum veya istek olayına yazılmaz. Dönem temizliği ilgili site içi bildirimleri de kapsar. Süresi dolan teknik kodlar temizlenir; şifre/oturum yenileme verileri arşiv veya Git deposuna konmaz.

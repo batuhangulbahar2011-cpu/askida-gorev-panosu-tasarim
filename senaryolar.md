@@ -65,3 +65,10 @@ Senaryolar aynı `roller.md`, `akis.md`, `veri.md` ve `ekranlar.md` kuralların�
 
 **Son durum:** rol/üyelik değişikliğinde aktif iş sahipsiz veya erişilemeyen bir hesapta kilitli değildir.
 
+## Ek masa başı kontrolleri — kayıt ve görünürlük
+
+- Danışman kod üretir; Batu ad/kullanıcı adı/kod ve kendi parolasıyla kaydolur. Üye olur, “Hoş geldin, Batu” görür. Aynı kod ikinci kayıtta geçersizdir; 7 günlük/iptal edilmiş kod da reddedilir.
+- Eren yalnız kendi adaylığını ve nazik seçilmeme bilgisini görür; Arda kendi görevinde tüm adayları görür. Özgür bildirilen sorunu incelerken ilgili adaylık notuna erişebilir. Ortak yorumları Batu da görür; kutular görünürlüğü ayrı açıklar.
+- Parolasını unutan Batu danışmana başvurur; kimliği doğrulanır. Hedef hesaba özel kodla 24 saat içinde yeni parola belirler; eski oturumlar kapanır, hesap/geçmiş kalır. Kod ikinci kez çalışmaz. İlk danışmanın aynı kurtarmasını Batu bakım erişimiyle yürütür.
+
+Bunlar tasarım senaryolarıdır; gerçek kayıt, güvenlik veya uygulama testi yapıldığı iddiası değildir.
