@@ -12,7 +12,7 @@ Başlangıç rolleri: danışman Özgür; kaptanlar Selim ve Arda; üyeler Batu,
 | Kişisel yardım talebi aç | Evet | Evet | Evet |
 | Göreve aday ol | Evet | Evet, kendi açtığına değil | Hayır; pilotta hakem rolü |
 | Talebe yardım teklif et | Evet | Evet | Evet |
-| Adayları gör | Evet, takım panosunda | Evet | Evet |
+| Adayları ve teklif notlarını gör | Kendi kaydı; kendi talebindeki bütün teklifler | Kendi kaydı; kendi isteğindeki bütün adaylar | Kendi isteğindekiler; bildirilen sorunu incelemek için ilgili kayıtlar |
 | Aday kabul et | Yalnız kendi talebinde | Kendi açtığı görev/talepte | Kendi açtığında; uyuşmazlıkta istisna |
 | Yapıldı bildir | Yalnız üstlendiğinde | Yalnız üstlendiğinde | Yalnız üstlendiği talepte |
 | Sonucu onayla / düzeltme iste | Kendi talebinde | Kendi açtığı görev/talepte | Kendi açtığında; uyuşmazlıkta istisna |
@@ -39,3 +39,7 @@ Kaptanın göreve aday olması öneridir; belge bunu açıkça söylemediği iç
 - Yayımlanmamış form taslağı sunucuya kaydedilmez. Yayınlanmış isteği iptal etmek onu silmez. Arşiv herkesin görebileceği takım kaydıdır; kişi performansını topluca gösteren görünüm değildir.
 
 Gerekçe: görevleri kişi isimlerine sabitlemeden takım değişikliklerine uyum sağlamak; iptal ile silmeyi ayırıp emeğin izini korumak.
+
+## Teklif görünürlüğü
+
+İstek sahibi kendi isteğinin bütün adaylarını/tekliflerini; aday yalnız kendi kaydını görür. Diğer üyeler seçilmeyen kişileri, teklif notlarını veya aday sayısını görmez; istek durumu ve seçilmiş yardımcı görünür. Danışman bildirilen sorunu incelerken ilgili adaylık geçmişine erişebilir. Formda bu erişim açıkça belirtilir. Ortak yorumlar bütün takım tarafından görülür. Bu yetkiler gerçek uygulamada sunucuda uygulanır.

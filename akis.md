@@ -42,7 +42,7 @@ Sahip isteği yalnız açıkken düzenler; tür sonradan değiştirilmez. Yenide
 
 ## Belgedeki beş sorunun cevabı
 
-1. **İki kişi aynı göreve talip olursa:** ikisinin adaylığı da görünür. Açan kişi gerekçeli seçim yapar; erken tıklamak öncelik hakkı değildir. Aynı anda iki kabul gelirse veritabanındaki tek işlem açık durum ve kayıt sürümünü kontrol eder; biri kazanır, diğeri “Bu istek güncellendi, yenileyin” görür. Üstlenen asla iki kişi olmaz.
+1. **İki kişi aynı göreve talip olursa:** açan kişi iki adaylığı da görür; adaylar birbirini görmez. Danışman yalnız bildirilen sorunu incelemek için ilgili adaylıkları görebilir. Açan kişi gerekçeli seçim yapar; erken tıklamak öncelik hakkı değildir. Aynı anda iki kabul gelirse veritabanındaki tek işlem açık durum ve kayıt sürümünü kontrol eder; biri kazanır, diğeri “Bu istek güncellendi, yenileyin” görür. Üstlenen asla iki kişi olmaz.
 2. **Üstlenen yapamazsa:** detayda “Bırak” seçer, kısa neden ve varsa yarım kalan işin nerede kaldığını yazar, sonra onaylar. Bu not takımın görebildiği hareket kaydında kalır. Üstlenen temizlenir, istek tekrar açık olur. Eski adaylar otomatik atanmaz; yeniden başvurabilir. Bırakmak puan/ceza üretmez.
 3. **Yapıldı hiç onaylanmazsa:** tek eşik vardır: Yapıldı bildirilmesinden 48 saat sonra iş danışmanın inceleme kuyruğuna girer. (10 Ekim öğretmen geri bildirimiyle sadeleştirildi: önceki 12 saatlik ayrı hatırlatma kaldırıldı; neden aşağıda.) Süre takvim saatiyle ölçülür; hafta sonu durmaz. Otomatik başarı/onay yoktur. Danışman tarafların ortak yorumlarını inceleyerek gerekçeli karar verir. Eşik sayfa açıldığında veya yenilendiğinde olay zamanından hesaplanır. Pilot için danışmanın kuyruğu günde bir kez kontrol etmesi önerilir; 48 saat incelemeye açılma eşiğidir, kararın aynı anda verileceği garantisi değildir. Hakem de üstlenen ise otomatik çözüm yok; sahip onayı gerekir.
 
@@ -59,3 +59,9 @@ Görev formu “Takım için beklenen çıktı nedir?” açıklamasını zorunl
 Kabul, bırakma, yapıldı, onay ve iptal; durum/sürüm kontrolü ve olay yazımıyla tek veritabanı işlemidir. Çift tıklama ikinci kez olay veya sayım üretmez. Eşzamanlı iptal/onayda ilk geçerli işlem tamamlanır, ikincisi çakışma görür. İnternet kopunca buton sonuç gelene kadar kilitlenir; tekrar gönderimde eski sürüm ve güncel durum kontrol edilir. Sayfa yenilenip son durum görülmeden başarı gösterilmez. 403 yetkisiz, 409 güncel olmayan işlem, alan hatası ilgili form alanında Türkçe görünür.
 
 İstek listesi: aktifler önce; son tarih artan, son tarihsizler en sonda; eşitlikte oluşturma zamanı artan ve kimlik artan. Arşiv: onay olayı tarihi azalan. Sayaçlar istek adedidir, aday/yorum adedi değildir.
+
+## Seçilmeyen aday ve bildirimler — 12 Ekim kararı
+
+Kabulden sonra seçilen kişiye kabul bildirimi, seçilmeyene “Bu istek için yardım ayarlandı. Teklifiniz için teşekkür ederiz; başka bir isteğe teklif verebilirsiniz” anlamında nazik, resmî bildirim gösterilir. Görevde yardım yerine görev için kişi belirlendi ifadesi kullanılır. Seçilmeyen kişi puan/öncelik kaybetmez; seçilen kişinin teklif notunu veya diğer adayları görmez. Seçim gerekçesi adayları karşılaştıran ortak bir değerlendirme olarak yayımlanmaz.
+
+Site içi bildirim simgesi yalnız kişinin kendi bildirimlerini gösterir; tıklama ilgili detaya açar. Yeni teklif isteği açana, kabul/seçilmeme adaylara, Yapıldı sahibine, onay/düzeltme üstlenene gider. Ortak yorumlar herkese açıktır; teklif notu özel sohbet değildir. Teklif, geri çekilme ve seçilmeme olayları da adaylık görünürlüğüne tabidir; ortak hareket listesi seçilmeyen adları sızdırmaz. Push/e-posta ilk kapsamda yoktur.

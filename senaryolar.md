@@ -5,9 +5,9 @@ Senaryolar aynı `roller.md`, `akis.md`, `veri.md` ve `ekranlar.md` kuralların�
 ## 1. Arda açar, Hakkı ve Eren aynı anda talip olur
 
 1. Arda kaptan rolüyle İstek Aç'ta Görev seçer; başlık “Üç dakikalık tanıtım videosu”, takım amacı “Proje sunumu”, gelecek bir son tarih ve açıklama girer. `requests.status=acik`; açılış olayı yazılır.
-2. Hakkı ve Eren üye olarak aynı anda detaydan talip olur. İki ayrı `applications` satırı bekler; istek hâlâ açık ve üstlenen boştur. Her iki kişi de birbirinin aday olduğunu görür.
-3. Arda adayları değerlendirir; Hakkı'yı “Çekim saatine uygunluğu nedeniyle” kabul eder. Tek işlemde Hakkı kabul, Eren seçilmedi; istek üstlenildi, üstlenen Hakkı olur.
-4. Arda'nın başka sekmesinden Eren için aynı anda kabul gelse bile eski sürüm/açık durum geçersizdir. İkinci işlem 409 gösterir; Eren üstlenen olamaz. Eren hiçbir sıra veya puan kaybetmez.
+2. Hakkı ve Eren üye olarak aynı anda detaydan talip olur. İki ayrı `applications` satırı bekler; istek hâlâ açık ve üstlenen boştur. Arda iki adaylığı görür; Hakkı ve Eren yalnız kendi adaylığını görür. Diğer üyeler adayların adlarını ve sayısını görmez.
+3. Arda adayları değerlendirir; Hakkı'yı “Çekim saatine uygunluğu nedeniyle” kabul eder; bu seçim notu adayları karşılaştıran ortak yorum olarak yayımlanmaz. Tek işlemde Hakkı kabul, Eren seçilmedi; istek üstlenildi, üstlenen Hakkı olur.
+4. Arda'nın başka sekmesinden Eren için aynı anda kabul gelse bile eski sürüm/açık durum geçersizdir. İkinci işlem 409 gösterir; Eren üstlenen olamaz. Eren hiçbir sıra veya puan kaybetmez. Eren’e “Bu görev için bir kişi belirlendi. İlginiz için teşekkür ederiz; diğer görevlere aday olabilirsiniz” anlamında nazik bildirim gelir. Eren Hakkı’nın özel teklif notunu görmez.
 5. Hakkı işi yapar, sonuç notuyla Yapıldı bildirir. Durum onay bekliyor olur. Arda videonun beklenen sonucu sağladığını ortak yorum ve sonucu görerek onaylar.
 6. İstek arşive girer; tek onay olayı Hakkı'yı hedef kişi olarak kaydeder. Bu haftanın görev toplamı bir artar, yardım toplamı değişmez. Hakkı'nın görev katkısı yalnız danışman kişi özetinde artar.
 
@@ -64,3 +64,4 @@ Senaryolar aynı `roller.md`, `akis.md`, `veri.md` ve `ekranlar.md` kuralların�
 4. Yeni aday Eren seçilip işi tamamlar; danışman sonucu onaylar ve arşive geçilir. Eski üyelerin önceki hareketleri saklama süresi boyunca kalır.
 
 **Son durum:** rol/üyelik değişikliğinde aktif iş sahipsiz veya erişilemeyen bir hesapta kilitli değildir.
+

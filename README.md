@@ -1,4 +1,4 @@
-﻿# Askıda Görev Panosu — Batu'nun tasarım taslağı
+# Askıda Görev Panosu — Batu'nun tasarım taslağı
 
 Bu tasarım, Askıda İyilik takımının takım görevlerini ve kişisel yardım taleplerini ayrı izleyebilmesi için hazırlanmıştır. Açan kişi adayları değerlendirir, birini seçer ve sonucu onaylar. Takım toplamları herkes tarafından, kişi bazlı özet yalnız danışman tarafından görülür. Pilot, telefon ve bilgisayardan kullanılan sade bir web panosu olarak önerilmiştir. Bu depo sistem tasarımı içerir; uygulama değildir.
 
@@ -31,15 +31,15 @@ Bu tasarım, Askıda İyilik takımının takım görevlerini ve kişisel yardı
 
 ### 1. hafta — 9–15 Ekim: kararları ve tasarımı netleştirme
 
-| Tarih | Yapılacak iş | Gün sonunda beklenen çıktı |
-|---|---|---|
-| 9 Ekim Cuma — bugün | Onay, son tarih, bırakma, gecikme ve düzeltme akışlarını netleştir; hesap ve saklama sorularını tamamla | Anlaşılmış akış kararları; güncel taslağın ilk gerçek GitHub kaydı (repo/yükleme doğrulanacak) |
-| 10 Ekim Cumartesi | Rol tablosu, sahiplik ve hesap açılışını gözden geçir; kaptanın aday olması belirsizliğini öğretmene sorulacak soru olarak kaydet | Tutarlı roller.md; açık yetki sorusu |
-| 11 Ekim Pazar | Görev ve kişisel yardım akışlarını baştan sona anlat; eşzamanlı aday, bırakma ve geciken onayı kontrol et | Savunulabilir akis.md; bulunan boşlukların düzeltmesi |
-| 12 Ekim Pazartesi | Her veri alanının neden gerekli olduğunu ve kimlerin göreceğini incele; saklama kararını işle | Gerekçeli veri.md |
-| 13 Ekim Salı | Pano, istek açma ve detay ekranlarını akışla eşleştir | İlk üç ekranın tutarlı taslağı |
-| 14 Ekim Çarşamba | Arşiv, danışman özeti ve takım yönetimini tamamla; mümkünse Selim/Arda'dan ihtiyaç geri bildirimi al | Altı ekranın tamamı; alınan geri bildirimin gerçek kaydı |
-| 15 Ekim Perşembe | Altı değişmez kuralı dosyalarda izle; ilk haftanın yapılan işlerini ve açıklarını özetle | kurallar.md kontrolü; birinci hafta ilerleme özeti |
+| Tarih               | Yapılacak iş                                                                                                                      | Gün sonunda beklenen çıktı                                                                     |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| 9 Ekim Cuma — bugün | Onay, son tarih, bırakma, gecikme ve düzeltme akışlarını netleştir; hesap ve saklama sorularını tamamla                           | Anlaşılmış akış kararları; güncel taslağın ilk gerçek GitHub kaydı (repo/yükleme doğrulanacak) |
+| 10 Ekim Cumartesi   | Rol tablosu, sahiplik ve hesap açılışını gözden geçir; kaptanın aday olması belirsizliğini öğretmene sorulacak soru olarak kaydet | Tutarlı roller.md; açık yetki sorusu                                                           |
+| 11 Ekim Pazar       | Görev ve kişisel yardım akışlarını baştan sona anlat; eşzamanlı aday, bırakma ve geciken onayı kontrol et                         | Savunulabilir akis.md; bulunan boşlukların düzeltmesi                                          |
+| 12 Ekim Pazartesi   | Her veri alanının neden gerekli olduğunu ve kimlerin göreceğini incele; saklama kararını işle                                     | Gerekçeli veri.md                                                                              |
+| 13 Ekim Salı        | Pano, istek açma ve detay ekranlarını akışla eşleştir                                                                             | İlk üç ekranın tutarlı taslağı                                                                 |
+| 14 Ekim Çarşamba    | Arşiv, danışman özeti ve takım yönetimini tamamla; mümkünse Selim/Arda'dan ihtiyaç geri bildirimi al                              | Altı ekranın tamamı; alınan geri bildirimin gerçek kaydı                                       |
+| 15 Ekim Perşembe    | Altı değişmez kuralı dosyalarda izle; ilk haftanın yapılan işlerini ve açıklarını özetle                                          | kurallar.md kontrolü; birinci hafta ilerleme özeti                                             |
 
 ### 2. hafta — 16–22 Ekim: son kontrol ve sunum
 
@@ -70,3 +70,7 @@ GitHub'a yalnız gerçekten yapılan değişiklikler açıklayıcı commit mesaj
 Kaynak: Özgür Girgin, **GOREV-TANIMI.pdf**, Bölüm 1–10; Batu'nun sağladığı dört sayfalık görev belgesi. Yerel kaynak: `C:\Users\Batuhann\Desktop\GOREV-TANIMI.pdf`. Belgenin kendisi bu depoya kopyalanmadı.
 
 2026-10-09 kararları (10 Ekim'de sadeleştirildi): Yapıldı bildiriminden 48 saat sonra danışman incelemesi; 12 saatlik hatırlatma kaldırıldı; otomatik onay yoktur. Görevde son tarih zorunlu, talepte isteğe bağlıdır; takım işlerini planlamak ve kişisel yardımı gereksiz tarihle sınırlamamak amaçlanır. Üstlenen kısa gerekçe ve varsa yarım kalan iş notuyla bırakabilir; istek yeniden adaylara açılır, yeni üstleneni açan kişi seçer. Geciken görev kapanmaz; “Gecikti” etiketiyle danışman inceleme kuyruğuna girer. Sonuç eksikse açan kişi gerekçeli düzeltme ister; iş aynı üstlenende kalır ve yeniden Yapıldı bildirimiyle onaya sunulur. Bu iki akış Batu tarafından kabul edildi. Hesapları danışman açar; kullanıcı adı ve geçici parola verir, kullanıcı ilk girişte parolasını değiştirir. Bu hesap açılışı Batu tarafından kabul edildi. Dönem kayıtları danışman dönemi kapattıktan sonra 90 gün tutulur, ardından silinir; süre tek tek görevlerin tamamlanmasından başlamaz. Aktif kullanıcı hesapları korunur. Batu, eski görevleri sonraki yıl görmeye ihtiyaç duymadığını söyleyerek bu saklama kararını kabul etti. Kalan teknoloji önerisi Django tercihidir. Danışman görevi üstlenmez; kaptanın üye gibi göreve aday olmasına izin verilmesi belge tablosundaki belirsizlik için pilot önerisidir ve Özgür öğretmene doğrulatılmalıdır. Teslim tarihi 22 Ekim 2026 Perşembe olarak Batu tarafından bildirildi; tasarım 18 Ekim'de bitecek şekilde planlandı. Öğretmenin tasarım seçimi, GitHub repo/yükleme doğrulaması ve sunum henüz tamamlanmadı.
+
+## 12 Ekim teklif gizliliği
+
+İstek sahibi bütün teklifleri, aday kendi kaydını görür. Diğer üyeler durum/seçilen kişiyi görür; danışman bildirilen sorunu inceleyebilir. Seçilmeyene nazik site içi bildirim gösterilir. Ortak yorumlar takımca görülür.

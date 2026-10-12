@@ -14,7 +14,7 @@ Tüm ekranlar giriş yapmış aktif takım üyelerine açıktır; danışman öz
 | [Benim üstlendiklerim] [Başlıkta ara]                |
 |----------------------------------------------------|
 | GÖREV · Tanıtım videosu · Açık                      |
-| Açan: Arda · Son tarih: 15 Ekim · 2 aday             |
+| Açan: Arda · Son tarih: 15 Ekim                     |
 | Takım amacı: Proje tanıtımı                 [Detay] |
 |----------------------------------------------------|
 | TALEP · Servo motor desteği · Üstlenildi             |
@@ -52,11 +52,11 @@ Sekme seçilince yalnız ilgili tür görünür; çizim iki kartın biçimini bi
 | Amaç: Takım projesinin tanıtımı                     |
 | Açıklama: Üç dakikalık video hazırlanacak.          |
 | [Talip ol]* [Adaylıktan vazgeç]* [Geri çek]**        |
-| Adaylar                                            |
+| Adaylar (yalnız sahibi bütün adayları görür)        |
 | Hakkı · Çekimi yapabilirim      [Kabul et]**         |
 | Eren · Kurguya yardımcı olurum [Kabul et]**          |
 |----------------------------------------------------|
-| Hareketler: Arda açtı; Hakkı ve Eren aday oldu       |
+| Hareketler: Arda açtı; seçilen kişi üstlendi         |
 | Ortak yorumlar (takım görebilir)                    |
 | Eren: Çekim için okulda uygun saat var mı?          |
 | [Yorum yaz......................................]  |
@@ -123,3 +123,7 @@ Kuyrukta geciken onay, geciken son tarih ve açık bildirim ayrı etiketlerdir. 
 ```
 
 Pasifleştirme öncesi devredilecek sahiplik ve tekrar açılacak işler listelenir. Parola sıfırlama yalnız kişinin yüz yüze talebi üzerine yapılır; geçici parola ilk girişte değişir. Dönemi kapatma yalnız aktif istek yokken kullanılabilir; 90 günlük silme zamanı önizlenir. Sistem ayarları takım toplamları veya kişi sıralaması içermez.
+
+## Görünürlük
+
+Aday listesi çizimi yalnız sahibi görünümüdür. Aday kendi kaydını görür; diğer üyeler seçilmeyenleri ve aday sayılarını görmez. Danışman bildirilen sorunu incelerken erişebilir. Teklif kutusu bu erişimi açıklar; ortak yorum kutusu tüm takımın göreceğini belirtir. Seçilmeyen kişiye nazik bildirim gösterilir.

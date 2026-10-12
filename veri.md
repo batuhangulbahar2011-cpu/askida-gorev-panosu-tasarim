@@ -45,7 +45,7 @@ Sonuç notu, onay saati, iptal nedeni, önceki üstlenenler ve ilk açan kişi o
 | state | bekliyor | Aktif/geri çekilmiş/seçilmiş adayları ayırmak |
 | updated_at | 2026-10-08T18:05:00Z | Son başvurunun sırasını göstermek |
 
-`request_id + user_id` benzersizdir. Eski not/hareket gerekli olduğunda events içindeki adaylık olayından okunur; tekrar adaylık yeni satır üretmez.
+`request_id + user_id` benzersizdir. Eski not/hareket gerekli olduğunda yalnız yetkili kişiye events içindeki adaylık olayından okunur; tekrar adaylık yeni satır üretmez.
 
 ## comments — ortak yorumlar
 
@@ -116,3 +116,7 @@ Hata kaydında bu iki alan dışında kullanıcı adı, IP, cihaz, gövde veya s
 - Ayrılan kişinin hesabı geçmiş işler bağlıyken pasif kalır; saklama süresi bitince referansı kalmayan pasif hesap silinir. Yedekler en çok 7 günlük döngüde tutulur; silinen veri en geç 7 gün sonra yedekten de çıkar. Yedek açılırsa aynı silme takvimi tekrar uygulanır.
 - Telefon, adres, doğum tarihi, fotoğraf/avatar, konum, okul/sınıf, beceri profili, cihaz kimliği, reklam/analitik takibi ve kişi performans dışa aktarımı tutulmaz. E-posta istemeyen hesap modeli kullanılır. GitHub tasarım reposunda gerçek kullanıcı hesabı, parola, çalışma DB'si veya gerçek takım faaliyet kaydı bulunmaz.
 - Altyapı erişim loglarında IP/cihaz takibi kapatılır; hata logları kimlik/parola/yorum gövdesi içermeyen teknik hata kodlarıyla, 7 gün süreyle tutulur. Bunlar pilotun ilave teknik saklama alanlarıdır; yalnız arıza bulmak içindir.
+
+## Adaylık görünürlüğü
+
+Adaylık ve teklif notunu istek sahibi ve ilgili aday görür. Danışman bildirilen sorunu inceleyebilir. Diğer üyelere aday sayıları/seçilmeyen kayıtlar gönderilmez. Adaylık olayları da aynı görünürlük kuralına tabidir. Site içi bildirimler yalnız alıcıya açıktır. Ortak yorumlar bütün takımca görülür; teklif notu özel sohbet değildir.
