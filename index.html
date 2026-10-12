@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#145e53"><meta name="description" content="Takım görevleri ve yardımlaşma için sade, üç ekranlık Askıda Görev Panosu demosu.">
+<title>Askıda Görev Panosu</title>
+<link rel="stylesheet" href="assets/style.css"><script defer src="assets/app.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">İçeriğe geç</a>
+<div class="demo-bar"><div class="shell demo-inner"><span><span class="demo-dot"></span> Deneme sürümü <span class="demo-note">· Örnek kişiler ve kayıtlar</span></span><div class="demo-controls"><label for="person">Görünümü dene</label><select id="person" aria-label="Örnek kişiyi seç"></select><button id="reset" class="text-button" type="button">Demoyu sıfırla</button></div></div></div>
+<header class="site-header"><div class="shell header-inner"><a href="#pano" class="brand" aria-label="Askıda Görev Panosu — ana sayfa"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M8 9h16v17H8zM12 9V6h8v3M12 15h8M12 20h5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Askıda<span class="brand-sub">Görev Panosu</span></span></a><div class="header-actions"><button id="bell" class="bell-button" aria-label="Bildirimler" aria-expanded="false" aria-controls="notifications" type="button"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9ZM10 21h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span id="bell-count" class="bell-count" hidden>0</span></button><div class="identity"><span id="avatar" class="avatar"></span><span><strong id="user-name"></strong><small id="user-role"></small></span></div></div><section id="notifications" class="notifications" aria-label="Bildirimler" hidden></section></div></header>
+<main id="main" class="shell main" tabindex="-1"></main>
+<footer class="shell footer"><span>Birlikte üretmek, birlikte kolaylaştırmak.</span><span>Örnek demo · Gerçek hesap ve takım kaydı içermez.</span></footer>
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+<dialog id="action-dialog" class="action-dialog" aria-labelledby="dialog-title"><form id="action-form"><div class="dialog-head"><h2 id="dialog-title"></h2><button type="button" id="close-dialog" class="icon-button" aria-label="Pencereyi kapat">×</button></div><p id="dialog-description" class="muted"></p><label for="action-note" id="dialog-label">Kısa açıklama</label><textarea id="action-note" name="note" rows="4" maxlength="1000" required></textarea><p id="action-error" class="field-error" role="alert" hidden></p><div class="dialog-actions"><button id="cancel-dialog" type="button" class="button secondary">Vazgeç</button><button id="confirm-dialog" type="submit" class="button primary">Kaydet</button></div></form></dialog>
+<noscript><div class="shell empty-state">Bu etkileşimli demoyu kullanmak için tarayıcıda JavaScript’i etkinleştirin.</div></noscript>
+</body></html>
