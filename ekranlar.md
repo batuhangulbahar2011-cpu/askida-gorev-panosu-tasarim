@@ -124,8 +124,10 @@ Kuyrukta geciken onay, geciken son tarih ve açık bildirim ayrı etiketlerdir. 
 
 Pasifleştirme öncesi devredilecek sahiplik ve tekrar açılacak işler listelenir. Parola yenilemede danışman kimliği doğrular; hesaba özel tek kullanımlık 24 saatlik kod verir ve kişi yeni parolasını kendisi belirler. Dönemi kapatma yalnız aktif istek yokken kullanılabilir; 90 günlük silme zamanı önizlenir. Sistem ayarları takım toplamları veya kişi sıralaması içermez.
 
-## Görünürlük
+## 12 Ekim görünürlük ve ilk demo kapsamı
 
-Aday listesi çizimi yalnız sahibi görünümüdür. Aday kendi kaydını görür; diğer üyeler seçilmeyenleri ve aday sayılarını görmez. Danışman bildirilen sorunu incelerken erişebilir. Teklif kutusu bu erişimi açıklar; ortak yorum kutusu tüm takımın göreceğini belirtir. Seçilmeyen kişiye nazik bildirim gösterilir.
+İlk demo yalnız Pano, İstek aç ve İstek detayıdır; arşiv/danışman yönetimi gerçek uygulama kapsamı olarak kalır. Bildirimler üstteki açılır kutudadır. Girişte “Hoş geldin, [ad]” gösterilir. Açık arka plan, koyu okunaklı metin, tek vurgu rengi ve yazılı durum etiketleri kullanılır. Telefon tek sütun, geniş ekranda kart listesi ve açıklama paneli.
 
-Danışman yönetimi üyeler/roller/parola yenileme, kayıt kodları, inceleme kuyruğu ve ayrı faaliyet özeti bölümlerini içerir.
+Adaylar çizimi yalnız sahibi görünümüdür. Aday kendi teklifini, diğer üyeler seçilmeyen kayıtları veya sayılarını görmez. Danışman bildirilen sorunu incelemek için ilgili teklifleri açabilir. Teklif kutusu “Bu notu istek sahibi ve danışman inceleme sırasında görebilir” açıklamasını; ortak yorum kutusu “Bu yorumu tüm takım görebilir” açıklamasını taşır. Seçilmeyen kişiye nazik bildirim gelir; kişinin yalnız kendi bildirimleri açılır.
+
+Danışman yönetiminin dört bölümü: üyeler/rol/pasifleştirme/parola yenileme; kayıt kodları/iptal/süre; geciken onay/görev/bildirim incelemesi; görev ve yardımın ayrı faaliyet özeti. Son aktif danışman korunur. İlk danışmanın kurtarmasında kimliği doğrulayan Batu bakım erişimini kullanır. Bu yönetim ekranı üç ekranlık demoya eklenmez.
