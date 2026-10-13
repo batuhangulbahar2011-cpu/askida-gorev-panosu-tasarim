@@ -25,7 +25,35 @@ Bu tasarım, Askıda İyilik takımının takım görevlerini ve kişisel yardı
 - Geciken onay danışmana gider: emeğin belirsiz süre beklememesi için.
 - Web önceliklidir: takım üyelerinin uygulama kurmadan aynı panoya ulaşabilmesi için.
 
-## Günlük çalışma ve teslim planı
+## Güncel çalışma planı — 13 Ekim ilerleme değerlendirmesi
+
+**Teslim: 22 Ekim 2026 Perşembe. Tasarımı tamamlama hedefi: 18 Ekim. Prova: 19–21 Ekim.** Gerçek sunum teslimden sonra; günü henüz doğrulanmadı. Bu plan, aşağıda korunan 9 Ekim takviminin kalan işler için yerini alır. Önceki commit tarihleri ve gerçekleşmiş işlerin tarihleri değiştirilmez.
+
+### Geldiğimiz aşama
+
+- Sekiz zorunlu tasarım dosyası güncellendi; sadeleştirme, gizli teklif/seçilmeyen kişi ve kayıt düzeni işlendi. Dosyaların hazır olması nihai tutarlılık ve öğrenci gerekçesi kontrolünün bittiği anlamına gelmez.
+- Pano, İstek aç ve Detay demosu hazır. 12 Ekim kaydına göre 20 gerçek Chrome kontrolü geçti; bilgisayar ve 320/390px görüntüleri incelendi. Gerçek telefon ve kullanıcı geri bildirimi henüz tamamlanmadı.
+- Beş değişiklik commit’i GitHub’a gönderildi; son demo commit’i `0590ecd`. 13 Ekim yerel kontrolünde çalışma alanı temizdi. GitHub Pages yayını henüz yapılmadı.
+- Django ortamı kurulu; gerçek hesaplar/paylaşılan veritabanı ve PythonAnywhere yayını henüz yok. Görev belgesi sistem tasarımını ister; çalışan Django sitesi teslim şartı değildir. Önce tasarım teslimi ve kullanıcı geri bildirimi tamamlanır.
+
+### Kalan günler
+
+| Tarih | Çalışma | Gün sonunda beklenen çıktı |
+|---|---|---|
+| 13 Ekim Salı | Güncel planı kaydet; Batu mevcut demoyu denesin. GitHub Pages yayını için hazırlığı kontrol et; paylaşılacak linkin çalıştığını yayın yapılınca doğrula. | Güncel plan; Batu’nun gerçek deneme notları. Yayın gerçekleşmeden link hazır sayılmaz. |
+| 14 Ekim Çarşamba | Demo yayımlandıysa Batu linki Selim/Arda’ya versin, yalnız “bir görev aç” desin; yönlendirmeden takıldıkları noktaları not et. Kaptanın göreve aday olma belirsizliğini Özgür öğretmene sor. | README’de kim/ne zaman/neye takıldı kaydı; varsa öğretmen yanıtı. Görüşme gerçekleşmezse bekliyor olarak bırak. |
+| 15 Ekim Perşembe | Alınan geri bildirime göre yalnız gereken ekran/akış düzeltmelerini yap; altı ekran taslağını ve altı değişmez kuralı karşılaştır. | Gerekçeli gerçek düzeltme commitleri; gerçekleşen ilk hafta ilerlemesi. Geri bildirim yoksa belge kontrolünü tamamla. |
+| 16 Ekim Cuma | Dört zorunlu ve iki ek senaryoyu roller/akış/ekranlarla sonuna kadar yürüt; akıştaki beş soruyu ve her veri alanının nedenini kontrol et. İlerlemeye göre kalan günleri yeniden değerlendir. | Bulunan boşlukların tasarımda düzeltilmesi; teslim kontrol listesi. |
+| 17 Ekim Cumartesi | Batu iki teknoloji seçeneğini, Django’yu nerede çalıştıracağını ve kimin bakacağını anlayarak kendi cümleleriyle anlatsın; temel tasarım kararlarının nedenlerini de yazsın. | Batu’nun kendi gerekçeleri; yalnız AI önerisine dayanmayan açıklama. |
+| 18 Ekim Pazar | Sekiz dosyayı çapraz kontrol et; açık öğretmen sorularını yanıtla veya belirsizlik olarak göster. Repo/link/son sürümü kontrol et. | Teslime hazır tasarım; kalan kritik eksikler açıkça listelenmiş. |
+| 19 Ekim Pazartesi | Beş dakikalık anlatımı Batu’nun cümleleriyle hazırla; ilk süreli prova. | Kısa konuşma notları ve ölçülmüş prova süresi. |
+| 20 Ekim Salı | Demo örneğiyle ikinci prova; rol, gizlilik, onay, veri ve teknoloji sorularına cevap çalış. | Beş dakikaya sığan anlatım; soru-cevap eksiklerinin giderilmesi. |
+| 21 Ekim Çarşamba | Son prova; GitHub erişimi, sekiz dosya ve varsa demo linkini son kez denetle. | Hazır sunum ve gerçek çalışma özeti. |
+| 22 Ekim Perşembe | Teslim saatini doğrula; repo bağlantısını ve zorunlu dosyaları kontrol edip teslim et. | Batu’nun teslim teyidi; gerçek sunum tarihi ayrıca takip edilir. |
+
+Bu hız korunursa tasarım 18 Ekim’den önce hazır olabilir; kazanılan süre kullanıcı geri bildirimi ve gerekçeleri öğrenmek için kullanılır. Bu bir hedef, tamamlanma garantisi değildir. Geri bildirim gecikirse bağımsız belge/senaryo çalışması sürer, görüşme yapılmış gibi yazılmaz. Kritik düzeltmeler 18 Ekim’e kadar önceliklidir; 19 Ekim’den sonra yeni özellik eklenmez. Gerçek Django sitesi, bu teslimin ardından ayrı geliştirme planıyla ele alınır. Değişiklikler ayrı gerçek ve açıklayıcı commitlerle kaydedilir; tarihleri geriye çekilmez.
+
+## Önceki günlük çalışma planı — 9 Ekim tarihli kayıt
 
 **Teslim: 22 Ekim 2026 Perşembe** (Batu'nun 9 Ekim tarihli doğrudan beyanı). Hedef: sekiz tasarım dosyasını **18 Ekim Pazar** günü tamamlamak; 19–21 Ekim'i sunuma, 22 Ekim'i teslim kontrolüne ayırmak. Bu bir çalışma planıdır; tarihlerdeki işler henüz yapılmış sayılmaz. İlk taslak 8 Ekim'de hazırlanmıştır.
 
@@ -55,7 +83,7 @@ Bu tasarım, Askıda İyilik takımının takım görevlerini ve kişisel yardı
 
 19 Ekim'den itibaren yeni özellik eklenmez; yalnız bulunan önemli çelişki veya eksikler düzeltilir. Bir gün aksarsa öncelik sekiz zorunlu dosyadadır; sunum günleri ek özellikler için kullanılmaz. Çalışma blokları için başlangıç önerisi günlük 45–60 dakikadır; Batu'nun zamanına göre ayarlanabilir.
 
-GitHub'a yalnız gerçekten yapılan değişiklikler açıklayıcı commit mesajlarıyla yüklenir. Bugünkü yükleme günün kararları tamamlandığında yapılacaktır. Haftalık özetler o günkü gerçek çalışma üzerinden hazırlanır; şu an yazılmış rapor değildir. Rapor istenirse sekiz zorunlu dosya korunur, ek raporlar ayrı tutulur. Commit tarihleri geriye çekilmez; boş veya sahte commitlerle düzenli çalışma görüntüsü oluşturulmaz. Azra'nın tasarımına teslimden önce bakılmaz; Selim ve Arda ile ihtiyaç konuşulabilir.
+GitHub'a yalnız gerçekten yapılan değişiklikler açıklayıcı commit mesajlarıyla yüklenir. İlk yükleme 9 Ekim’de, demo ve sonraki beş değişiklik commit’inin gönderimi 12 Ekim’de tamamlandı; yeni değişikliklerin gönderimi ayrıca doğrulanır. Haftalık özetler o günkü gerçek çalışma üzerinden hazırlanır; şu an yazılmış rapor değildir. Rapor istenirse sekiz zorunlu dosya korunur, ek raporlar ayrı tutulur. Commit tarihleri geriye çekilmez; boş veya sahte commitlerle düzenli çalışma görüntüsü oluşturulmaz. Azra'nın tasarımına teslimden önce bakılmaz; Selim ve Arda ile ihtiyaç konuşulabilir.
 
 ## Beş dakikalık sunum
 
@@ -87,4 +115,4 @@ Deneme: Arda olarak tanıtım videosu görevini aç, Hakkı’yı seç. Eren’e
 
 GitHub Pages için depo Settings → Pages → Deploy from a branch → main / root kullanılabilir. Önce gerçek commit/push gerekir; bu ayarın yapıldığı veya sitenin yayımlandığı varsayılmaz. Demo GitHub Pages içindir; gerçek Django sitesi ücretsiz PythonAnywhere başlangıç planıyla ayrıca kurulacaktır.
 
-12 Ekim yeni sıra önce kararlar → tasarım güncellemesi → üç ekranlık demo → Selim/Arda geri bildirimi. Yukarıdaki tarihli çalışma planı geçmiş plan olarak korunur; işler geriye dönük yapılmış sayılmaz. Cuma sonraki hafta planlanır; 22 Ekim teslim tarihi değişmez.
+12 Ekim yeni sıra önce kararlar → tasarım güncellemesi → üç ekranlık demo → Selim/Arda geri bildirimi. 9 Ekim tarihli çalışma planı geçmiş plan olarak korunur; 13 Ekim güncel planı kalan işlerde esas alınır; işler geriye dönük yapılmış sayılmaz. Cuma sonraki hafta planlanır; 22 Ekim teslim tarihi değişmez.
