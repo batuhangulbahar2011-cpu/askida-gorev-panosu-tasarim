@@ -24,3 +24,8 @@ Takım üyeleri ham isteklerde kim ne yaptı görebilir. Kuralın korunması, bu
 ## Görünürlük kabul kontrolü
 
 Adayların birbirini görmemesi yalnız kartları gizlemekle sağlanmaz: gerçek uygulamada adaylık/not/olay uçları ve bildirim alıcıları denetlenir. Seçilmeyen adları ve aday sayılarını ortak pano/hareket akışına sızdırmama kontrol edilir. Danışman inceleme erişimi teklif kutusunda açıklanır. Üç ekranlık demo yalnız örnek verilerle görünür davranışı gösterir; tarayıcıdaki rol seçici gerçek oturum/yetkilendirme değildir.
+
+
+## 13 Ekim uygulama kontrolü
+
+Ana Django sitesinde üyelerin görev açamaması, görevde amaç/son tarih zorunluluğu, ek kişisel veri ve rol alanının reddi, sıradan kullanıcıya danışman özetinin 403 olması, gizli teklif/olay/bildirim alıcısı, ortak yorumdaki HTML'nin kaçışlanması ve iptalin tamamlanmış sayılmaması ayrı testlerle kontrol edildi. Sonuç: 30 Django testi, 32 ayrı gerçek Chrome kontrolü geçti. Bu sonuç her gelecekteki güvenlik açığını veya kötü niyet tespitini garanti etmez; kaptanın yanlış takım amacı yazması hâlâ ortak bildirim/danışman kararını gerektirir. Kullanıcı geri bildirimi ve fiziksel telefon denemesi ayrı açık işlerdir. Önceki bölümdeki genel ölçütler korunur; burada yalnız gerçekleştirilen kapsam kaydedilir.

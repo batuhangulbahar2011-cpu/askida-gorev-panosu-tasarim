@@ -1,6 +1,6 @@
 # Askıda Görev Panosu — Batu'nun tasarım taslağı
 
-Bu tasarım, Askıda İyilik takımının takım görevlerini ve kişisel yardım taleplerini ayrı izleyebilmesi için hazırlanmıştır. Açan kişi adayları değerlendirir, birini seçer ve sonucu onaylar. Takım toplamları herkes tarafından, kişi bazlı özet yalnız danışman tarafından görülür. Pilot, telefon ve bilgisayardan kullanılan sade bir web panosu olarak önerilmiştir. Bu depo sistem tasarımı ve üç ekranlık örnek web demosu içerir. Gerçek hesaplı Django uygulaması sonraki aşamadır.
+Bu tasarım, Askıda İyilik takımının takım görevlerini ve kişisel yardım taleplerini ayrı izleyebilmesi için hazırlanmıştır. Açan kişi adayları değerlendirir, birini seçer ve sonucu onaylar. Takım toplamları herkes tarafından, kişi bazlı özet yalnız danışman tarafından görülür. Pilot, telefon ve bilgisayardan kullanılan sade bir web panosu olarak önerilmiştir. Bu depo sistem tasarımı ve üç ekranlık örnek web demosu içerir. Gerçek hesaplı Django uygulamasının yerel ilk sürümü 13 Ekim’de başlatıldı; [ana site rehberi](ANA-SITE.md). İnternet yayını ayrıca yapılacaktır.
 
 **Durum:** 2026-10-09 tarihinde akış kararları güncellendi. Belgedeki zorunlu kurallar uygulanmıştır; gerekçeli bırakma Batu tarafından kabul edildi. 10 Ekim öğretmen geri bildirimiyle onay takibi sadeleştirildi: 12 saatlik hatırlatma kaldırıldı, yalnız 48 saat danışman eşiği kaldı; saklanan durumlar beşten dörde indi. Son tarih kararı Batu tarafından Codex'e bırakıldı: görevde zorunlu, talepte isteğe bağlı. Dönem sonrası 90 günlük kayıt saklama Batu tarafından kabul edildi; 12 Ekim’de Batu gerçek uygulama için Django’yu seçti. Bu metin AI desteğiyle hazırlanmıştır; Batu gerekçeleri anlayıp kendi görüşüne göre düzenlemeden nihai teslim sayılmaz.
 
@@ -51,7 +51,7 @@ Bu tasarım, Askıda İyilik takımının takım görevlerini ve kişisel yardı
 | 21 Ekim Çarşamba | Son prova; GitHub erişimi, sekiz dosya ve varsa demo linkini son kez denetle. | Hazır sunum ve gerçek çalışma özeti. |
 | 22 Ekim Perşembe | Teslim saatini doğrula; repo bağlantısını ve zorunlu dosyaları kontrol edip teslim et. | Batu’nun teslim teyidi; gerçek sunum tarihi ayrıca takip edilir. |
 
-Bu hız korunursa tasarım 18 Ekim’den önce hazır olabilir; kazanılan süre kullanıcı geri bildirimi ve gerekçeleri öğrenmek için kullanılır. Bu bir hedef, tamamlanma garantisi değildir. Geri bildirim gecikirse bağımsız belge/senaryo çalışması sürer, görüşme yapılmış gibi yazılmaz. Kritik düzeltmeler 18 Ekim’e kadar önceliklidir; 19 Ekim’den sonra yeni özellik eklenmez. Gerçek Django sitesi, bu teslimin ardından ayrı geliştirme planıyla ele alınır. Değişiklikler ayrı gerçek ve açıklayıcı commitlerle kaydedilir; tarihleri geriye çekilmez.
+Bu hız korunursa tasarım 18 Ekim’den önce hazır olabilir; kazanılan süre kullanıcı geri bildirimi ve gerekçeleri öğrenmek için kullanılır. Bu bir hedef, tamamlanma garantisi değildir. Geri bildirim gecikirse bağımsız belge/senaryo çalışması sürer, görüşme yapılmış gibi yazılmaz. Kritik düzeltmeler 18 Ekim’e kadar önceliklidir; 19 Ekim’den sonra yeni özellik eklenmez. 13 Ekim’de Batu, hocanın demoyu beğendiğini söyleyip ana siteye geçilmesini istedi. Ana Django sitesi tasarım teslimi/prova günlerini koruyarak paralel geliştirilir; tasarımın zorunlu kontrolleri önceliğini korur. Değişiklikler ayrı gerçek ve açıklayıcı commitlerle kaydedilir; tarihleri geriye çekilmez.
 
 ## Önceki günlük çalışma planı — 9 Ekim tarihli kayıt
 
@@ -116,3 +116,19 @@ Deneme: Arda olarak tanıtım videosu görevini aç, Hakkı’yı seç. Eren’e
 GitHub Pages için depo Settings → Pages → Deploy from a branch → main / root kullanılabilir. Önce gerçek commit/push gerekir; bu ayarın yapıldığı veya sitenin yayımlandığı varsayılmaz. Demo GitHub Pages içindir; gerçek Django sitesi ücretsiz PythonAnywhere başlangıç planıyla ayrıca kurulacaktır.
 
 12 Ekim yeni sıra önce kararlar → tasarım güncellemesi → üç ekranlık demo → Selim/Arda geri bildirimi. 9 Ekim tarihli çalışma planı geçmiş plan olarak korunur; 13 Ekim güncel planı kalan işlerde esas alınır; işler geriye dönük yapılmış sayılmaz. Cuma sonraki hafta planlanır; 22 Ekim teslim tarihi değişmez.
+
+
+## 13 Ekim — demo geri bildirimi ve ana siteye geçiş
+
+Batu, demoyu hocaya gösterdiğini ve hocanın beğendiğini söyledi (13 Ekim, kullanıcı beyanı). Bu genel olumlu geri bildirimdir; belirli bir görevi açarken hangi noktada takıldığına dair kullanıcı deneme kaydı değildir. Ek öğretmen isteği ve Selim/Arda denemesi henüz bildirilmedi; yapılmış sayılmaz. Pages üzerinden yayın da henüz doğrulanmadı. Demo dosyaları korunur.
+
+13–15 Ekim kalan kontrolü: Pano/İstek aç/Detay hazır; arşiv, danışman özeti ve takım yönetimi taslakları ekranlar.md’de mevcut. Altı değişmez kural; tür/amaç ayrımı, ayrı katkı-yardım sayımı, yalnız danışman kişi özeti, ortak yorumlar, asgari veri ve puan/kredi/rozet olmaması üzerinden ana siteye taşınır. Gerçek kullanıcı geri bildirimi gelirse gereken değişiklik ayrı commit yapılır. Kaptanın göreve adaylığı Özgür öğretmene doğrulatılacak açık sorudur; pilot önerisi henüz kesinleştirilmez.
+
+Batu bugün ana site geliştirmesini açıkça istedi. Django sitesi yerelde gerçek giriş/kayıt, ortak veritabanı, panolar, teklif/onay, arşiv, bildirimler ve danışman yönetimiyle hazırlanır. [ANA-SITE.md](ANA-SITE.md) çalıştırma ve bakım adımlarını içerir. Başlangıç için `baslat.bat`; gerçek danışman hesabını ilk çalıştırmada kişi kendi parolasıyla oluşturur. Selim/Arda görüşmesi, Pages veya PythonAnywhere yayını bu metinle gerçekleşmiş sayılmaz. 18 Ekim tasarım hedefi, 19–21 Ekim prova ve 22 Ekim teslim korunur.
+
+
+### Ana sitenin 13 Ekim doğrulaması
+
+- `manage.py check` sorun bulmadı. Ayrı test veritabanında 30 Django testi geçti: oturum/rol/sahiplik, form ve ek veri reddi, tek kullanımlık kod, gizli teklif ve bildirim, durum/sürüm çakışması, düzeltme/bırakma/iptal/onay, üyelik devri ve dönem temizliği.
+- Ayrı örnek veritabanı ve ayrı Chrome oturumlarıyla 32 gerçek tarayıcı kontrolü geçti: davetle kayıt, gerçek giriş, kaptanın görev açması, iki teklif/seçim, nazik seçilmeme, sonucun düzeltilmesi/onaylanması/arşiv, danışmana erişim engeli ve 320/390/1280px ana ekranlarda taşma kontrolü. Danışman ekranları 320px'de ayrıca kontrol edildi; JavaScript hatası çıkmadı. Bilgisayar panosu/mobil detay/mobil danışman özeti görüntüleri incelendi. Bu fiziksel telefon veya Selim/Arda kullanıcı testi değildir.
+- Test hesapları gerçek çalışma veritabanında oluşturulmadı. Gerçek ilk danışman hesabı `baslat.bat` ilk açılışında kendi parolasıyla oluşturulur. GitHub gönderimi ve internet yayını ayrıca yapılır.

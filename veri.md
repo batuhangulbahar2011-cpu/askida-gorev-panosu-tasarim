@@ -128,3 +128,22 @@ Hata kaydında bu iki alan dışında kullanıcı adı, IP, cihaz, gövde veya s
 Parola tekrarı veritabanına yazılmaz; yalnız formda eşleşme kontrolüdür. Kod tüketimi ve hesap/parola işlemi tek veritabanı işleminde gerçekleşir. Kullanılmış/süresi dolmuş/iptal edilmiş kod işlem yapamaz.
 
 Adaylık satırı, notu ve olay geçmişi istek sahibi/ilgili aday için görünür; danışman bildirilen sorunu inceleyebilir. Ortak istek geçmişine tüm adaylık kayıtları gönderilmez. Parola yenileme/kayıt kodu alanları ortak yorum veya istek olayına yazılmaz. Dönem temizliği ilgili site içi bildirimleri de kapsar. Süresi dolan teknik kodlar temizlenir; şifre/oturum yenileme verileri arşiv veya Git deposuna konmaz.
+
+
+## Ana site — Django teknik alanları (13 Ekim)
+
+Gerçek uygulamada tasarımdaki `users.name/role/active` Django özel kullanıcı modelindeki `name/role/is_active` alanlarıdır; parola özeti `password` alanında tutulur. İstek/adaylık/not alanları yukarıdaki modelle eşleşir. E-posta, first_name/last_name alanları kaldırılmıştır; yalnız ad istenir. Django'nun AbstractUser altyapısı aşağıdaki teknik alanları da sağlar; ürün rolü her zaman `role` alanından denetlenir, personel bayrağı site rolünü değiştirmez.
+
+| Teknik alan | Neden / sınır |
+|---|---|
+| users.last_login | Django'nun başarılı girişin zamanını kaydetmesi; IP/cihaz içermez, kişi özeti ölçütü değildir. |
+| users.date_joined | Hesabın açılış zamanını korumak; faaliyet/puan sayımı değildir. |
+| users.is_staff, is_superuser | Django'nun standart teknik yetki bayrakları; web kayıt akışında kapalıdır. Ürün rolü bunlardan alınmaz; Django admin paneli açılmamıştır. |
+| users.groups, user_permissions | Django standart izin ilişkileri; bu pilotta boş tutulur, ürün izinleri rol ve sahiplikten hesaplanır. |
+| login_attempts.key | Kullanıcı adı özetine göre kısa süreli giriş denemelerini sınırlamak; kullanıcı adının kendisi veya IP tutulmaz. |
+| login_attempts.count | 15 dakika içinde sekiz başarısız denemeden sonra bekletmek. |
+| login_attempts.expires_at | Sayaç geçerliliği; süre dolunca tekrar girişe izin verilir, teknik_temizle komutu eski kayıtları siler. |
+
+Django session tablosu `session_key/session_data/expire_date` adlarını kullanır: hesap kimliği ve oturum doğrulama bilgisi giriş için gereklidir. Cookie'de oturum anahtarı vardır; parola açık saklanmaz. Oturum ömrü 12 saattir, parola değişimi eski oturumun doğrulamasını geçersizleştirir. Framework tablo/alan adları bağımsız bir token sistemi eklemez.
+
+Otomatik saklama/yedek işçisi bu yerel ilk sürümde kurulmadı. 90 günlük dönem temizliği ve teknik kayıt temizliği için ANA-SITE.md bakım komutları işletilir; yayın kurulurken çalıştırma takvimi ve sağlayıcı kayıtları ayrıca yapılandırılır. Gerçek çalışma DB'si ve yerel gizli anahtar repoya alınmaz.
