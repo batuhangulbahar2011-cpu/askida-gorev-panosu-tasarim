@@ -144,7 +144,7 @@ def create_request(request):
             return redirect('detail', item.pk)
         except RuleError as exc:
             form.add_error(None, str(exc))
-    return render(request, 'pano/form.html', {'form': form, 'title': 'İstek aç', 'intro': 'Takımın işi için Görev; kişisel yardım için Talep. Telefon, adres veya başka kişisel veri yazmayın.', 'button': 'Yayımla'})
+    return render(request, 'pano/create.html', {'form': form})
 
 @login_required
 def edit_request(request, pk):

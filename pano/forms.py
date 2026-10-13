@@ -56,6 +56,7 @@ class RequestForm(StrictFields, forms.ModelForm):
         self.user = user
         if not self.instance.pk and user.role == 'uye':
             self.fields['kind'].choices = [('talep', 'Yardım talebi')]
+            self.initial['kind'] = 'talep'
         if self.instance.pk:
             self.fields['kind'].disabled = True
             self.fields['version'].initial = self.instance.version

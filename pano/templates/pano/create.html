@@ -1,0 +1,25 @@
+{% extends 'pano/base.html' %}{% load static %}{% block title %}İstek aç · Askıda Görev Panosu{% endblock %}
+{% block content %}
+<a class="back" href="{% url 'board' %}">← Panoya dön</a>
+<div class="heading"><div><span class="eyebrow">BİRLİKTE BİR ADIM DAHA</span><h1>Yeni bir istek aç.</h1><p class="muted">İhtiyacını kısa ve açık anlat; doğru kişiyle buluş.</p></div></div>
+<div class="create-layout">
+<form method="post" class="panel create-form" id="create-form">{% csrf_token %}{{ form.non_field_errors }}
+<fieldset class="kind-fieldset"><legend>Ne tür bir istek?</legend>
+<div class="type-options">
+<label class="type-option {% if form.kind.value == 'gorev' %}selected{% endif %} {% if user.role == 'uye' %}unavailable{% endif %}">
+<input type="radio" name="kind" value="gorev" {% if form.kind.value == 'gorev' and user.role != 'uye' %}checked{% endif %} {% if user.role == 'uye' %}disabled{% endif %}>
+<strong>Takım görevi</strong><small>{% if user.role == 'uye' %}Yalnız kaptan ve danışman açabilir.{% else %}Takımın ortak hedefi için bir iş.{% endif %}</small></label>
+<label class="type-option {% if form.kind.value == 'talep' %}selected{% endif %}">
+<input type="radio" name="kind" value="talep" {% if form.kind.value == 'talep' %}checked{% endif %}>
+<strong>Yardım talebi</strong><small>Kendi ihtiyacın için takımından destek.</small></label>
+</div>{{ form.kind.errors }}</fieldset>
+<div class="create-field">{{ form.title.label_tag }}{{ form.title }}{{ form.title.errors }}</div>
+<div class="create-field"><label for="{{ form.description.id_for_label }}">Neye ihtiyacın var?</label>{{ form.description }}{{ form.description.errors }}</div>
+<div class="create-field" id="purpose-field"><label for="{{ form.team_purpose.id_for_label }}">Takım amacı</label>{{ form.team_purpose }}<p class="helptext">Bu iş takımın hangi ihtiyacını karşılıyor? Kişisel ihtiyaç için yardım talebi aç.</p>{{ form.team_purpose.errors }}</div>
+<div class="create-field"><label for="{{ form.due_date.id_for_label }}">Son tarih <span class="optional" id="due-hint">{% if form.kind.value == 'gorev' %}· Zorunlu{% else %}· İsteğe bağlı{% endif %}</span></label>{{ form.due_date }}{{ form.due_date.errors }}</div>
+{% for field in form.hidden_fields %}{{ field }}{{ field.errors }}{% endfor %}
+<div class="create-end"><span class="muted">{{ user.name }} adına açılacak.</span><button class="primary">İsteği yayımla <span aria-hidden="true">→</span></button></div>
+</form>
+<aside class="create-aside"><section class="panel"><h2>Küçük bir hatırlatma</h2><p>Telefon, adres veya özel kişisel bilgi yazma. Açıklama ve ortak yorumları tüm takım görebilir.</p></section></aside>
+</div><script src="{% static 'pano/create.js' %}" defer></script>
+{% endblock %}
