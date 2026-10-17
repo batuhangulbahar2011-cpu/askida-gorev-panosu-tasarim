@@ -9,7 +9,7 @@
 | 5. Asgari veri | Fotoğraf/telefon/adres/doğum tarihi alanları ve yükleme butonu yok | `veri.md` her alanın gerekçesini tanımlar. Bilinmeyen ek alan reddedilir; fotoğraf kabul edilmez. Hassas veri yorumdan gerekçeli temizlenir | Form/API fazladan `photo`/`phone` verisi gönderirse kayıt oluşmaz; parola/log kontrolünde açık sır bulunmaz |
 | 6. Kredi yok | Puan, rozet, teşekkür puanı ve ödül görünümü yok | Sadece hareket izi ve ayrı faaliyet adetleri hesaplanır; puan/kredi kolonları yok | İşi bitiren kullanıcıya onay bilgisi gelir; puan/rozet üretilmez |
 
-Bu kontroller uygulama geliştirilirken yapılacak kabul ölçütleridir; şu an çalışan uygulamada test edilmiş sonuçlar değildir.
+Bu tablo kabul ölçütlerini tanımlar. Gerçekleştirilen testlerin tarihi ve sınırı aşağıdaki uygulama kontrolünde, güncel sonuç README’de belirtilir.
 
 ## Otomatik kontrolün sınırı
 
@@ -29,3 +29,7 @@ Adayların birbirini görmemesi yalnız kartları gizlemekle sağlanmaz: gerçek
 ## 13 Ekim uygulama kontrolü
 
 Ana Django sitesinde üyelerin görev açamaması, görevde amaç/son tarih zorunluluğu, ek kişisel veri ve rol alanının reddi, sıradan kullanıcıya danışman özetinin 403 olması, gizli teklif/olay/bildirim alıcısı, ortak yorumdaki HTML'nin kaçışlanması ve iptalin tamamlanmış sayılmaması ayrı testlerle kontrol edildi. Sonuç: 30 Django testi, 32 ayrı gerçek Chrome kontrolü geçti. Bu sonuç her gelecekteki güvenlik açığını veya kötü niyet tespitini garanti etmez; kaptanın yanlış takım amacı yazması hâlâ ortak bildirim/danışman kararını gerektirir. Kullanıcı geri bildirimi ve fiziksel telefon denemesi ayrı açık işlerdir. Önceki bölümdeki genel ölçütler korunur; burada yalnız gerçekleştirilen kapsam kaydedilir.
+
+## 17 Ekim ek kontrolü
+
+40 Django testi geçti. Yeni kontroller: görev/talep sayımlarının ayrılması; bırakıp yeni adayla tamamlamada tek onay; geciken işin açık kalması; kapalı isteğe yorumun reddi ve itirazın korunması; çözülmüş şikâyetin tek başına müdahale yetkisi vermemesi; kişisel veri temizliğinin incelemeyi kendiliğinden kapatmaması. Pano başlık/durum/kendi ilişkisi filtreleri kişi sıralaması oluşturmaz; arşiv yalnız tür ve tarih aralığıyla süzülür.

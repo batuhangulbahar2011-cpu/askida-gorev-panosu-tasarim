@@ -67,3 +67,11 @@ py -3 -m venv .venv
 Gerçek yayın planı ücretsiz PythonAnywhere; hesap ve dağıtım bu adımda yapılmaz. Yayında `DJANGO_DEBUG=0`, güçlü `DJANGO_SECRET_KEY`, gerçek alan adıyla `DJANGO_ALLOWED_HOSTS`, HTTPS ve statik dosya sunumu gerekir. `collectstatic` ve `check --deploy` dağıtımdan önce çalıştırılır. WSGI uygulaması `config.wsgi.application`. Geliştirme sunucusu internette kullanılmaz. Sağlayıcı erişim logları ve yedek saklama ayarları ayrıca kontrol edilir; yerel uygulama altyapı sağlayıcısının kayıtlarını kontrol etmiş sayılmaz.
 
 Başvuru kaynakları: [Django hesap modeli](https://docs.djangoproject.com/en/5.2/topics/auth/customizing/), [SQLite işlemleri](https://docs.djangoproject.com/en/5.2/ref/databases/#sqlite-notes), [yayın kontrol listesi](https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/).
+
+## 17 Ekim geliştirmesi
+
+Pano: başlık araması, durum ve kendi açtıkları/üstlendikleri birlikte filtrelenebilir; sekme değişince seçimler korunur. Arşiv: görev/talep ve bütün dönem/bu hafta/bu ay filtreleri; sonuç sekmesi değişince filtreler korunur. Kapalı istekte yeni yorum yoktur, itiraz bildirimi devam eder. Çözülmüş şikâyet tek başına danışman müdahalesine yetmez; yorum temizleme açık şikâyeti kendiliğinden kapatmaz.
+
+40 Django testi ayrı veritabanında geçti. Mevcut sunucu açıksa Ctrl+C, sonra baslat.bat ile yeniden başlat ve tarayıcıda Ctrl+F5 yap. Yeni hesap açman gerekmez. İnternet yayını ve gerçek telefon/takım denemesi ayrı açık işlerdir.
+
+17 Ekim son tarayıcı kontrolü: ayrı örnek DB ve Chrome oturumlarında 40 kontrol geçti; 320/390/1280px taşma denetimleri, filtrelerin kullanımı, sekmede korunması, kapalı kayıt ve teklif gizliliği. JavaScript hatası yok. Masaüstü pano ve mobil detay görüntüleri incelendi. Fiziksel telefon testi değildir.

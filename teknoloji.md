@@ -57,3 +57,9 @@ Kurulum kaydına göre .venv içinde Django 5.2.18 kurulmuştur; requirements.tx
 Demo: GitHub Pages’te HTML/CSS/JavaScript. Gerçek uygulama: PythonAnywhere ücretsiz başlangıç planı; bakım Batu’da, Codex oturumlarda yardımcı. Ücretsiz planda bir web uygulaması, 512 MiB toplam hesap alanı ve bir aylık süre uzatma takibi vardır (12 Ekim resmî belge kontrolü). Kurulum boyutu/kullanımı yayın sırasında ölçülür; yedekler PC’de tutulacak şekilde planlanır. Otomatik kota izleme, yedekleme veya sürekli bakım henüz kurulmadı.
 
 Kaynaklar: [Ücretsiz plan](https://help.pythonanywhere.com/pages/FreeAccountsFeatures/), [süre uzatma](https://blog.pythonanywhere.com/129/), [Django yayını](https://help.pythonanywhere.com/pages/DeployExistingDjangoProject/), [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages).
+
+## 17 Ekim — yayın planı ve öğrenci gerekçesi kontrolü
+
+PythonAnywhere resmî ücretsiz planı 17 Ekim’de tekrar kontrol edildi: 1 web uygulaması/1 worker, 512 MiB alan ve 1 aylık uzatma takibi var. Yeni ücretsiz hesapta zamanlanmış görev yok; bu nedenle otomatik günlük temizlik/yedek çalışacağı varsayılamaz. Bakım sahibi Batu, teknik_temizle ve donem_temizle komutlarının takibini ANA-SITE.md üzerinden yapmalı; otomatik zamanlayıcı ayrıca kurulmadan işletilmiş sayılmaz. Kaynak: [güncel ücretsiz hesap özellikleri](https://help.pythonanywhere.com/pages/FreeAccountsFeatures/), [2026 değişikliği](https://blog.pythonanywhere.com/221/). Hesap açılışı ve internet yayını henüz yapılmadı.
+
+Batu’nun 17 Ekim kendi açıklaması henüz alınmadı. README’deki kısa gerekçe soruları bunun için var; yukarıdaki asistan açıklaması öğrenci cevabının yerini tutmaz.

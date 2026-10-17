@@ -25,7 +25,25 @@ Bu tasarım, Askıda İyilik takımının takım görevlerini ve kişisel yardı
 - Geciken onay danışmana gider: emeğin belirsiz süre beklememesi için.
 - Web önceliklidir: takım üyelerinin uygulama kurmadan aynı panoya ulaşabilmesi için.
 
-## Güncel çalışma planı — 13 Ekim ilerleme değerlendirmesi
+## 17 Ekim — güncel durum ve kalan işler
+
+17 Ekim’de mevcut Django sitesi üzerinden devam edildi. Panoya başlık araması ve durum filtresi; arşive tür/tarih filtresi eklendi. Kapalı kayda yorum yazma, çözülmüş şikâyetle danışman müdahalesi ve yorum temizlerken şikâyeti kendiliğinden kapatma açıkları düzeltildi. Ayrı veritabanında 40 Django testi geçti. Bu kontrol gerçek kullanıcı görüşmesi değildir.
+
+| 17 Ekim’e kadar planlanan iş | Gerçek durum |
+|---|---|
+| Akış, roller, altı ekran ve altı değişmez kural | Dosyalar ve uygulama karşılaştırıldı; bulunan eksikler düzeltildi. |
+| Dört zorunlu ve iki ek senaryo | senaryolar.md’deki yürütmeler ve ilgili otomatik testler karşılaştırıldı; 17 Ekim kontrol eşlemesi dosyanın sonunda. |
+| Akıştaki beş soru | akis.md’de cevaplı; üstlenilmiş işte tarih değişimi yeniden açma kararı üzerinden netleştirildi. |
+| Her veri alanının nedeni | veri.md kontrol edildi; tasarım/gerçek Django teknik alanları ayrımı korundu, görünürlük ifadesi düzeltildi. |
+| Selim/Arda denemesi ve öğretmenin kaptan adaylığı yanıtı | Yeni bir sonuç bildirilmedi; bekliyor. Hocanın demoyu beğendiği önceki kullanıcı beyanı korunur. |
+| Batu’nun kendi gerekçeleri | 12 Ekim’deki kısa beyan var; 17 Ekim açıklaması henüz alınmadı. AI metni Batu’nun cevabı sayılmaz. |
+| Çalışan ana site | Yerel Django sitesi geliştirildi; internet yayını yapılmadı. |
+
+**Batu’nun tamamlayacağı kısa çalışma:** Kendi cümlelerinle Django’yu neden seçtiğini, alternatifin hangi işini zorlaştıracağını, siteyi nerede çalıştıracağını ve bakımda hangi işleri üstleneceğini anlat. Ardından “neden ilk aday otomatik seçilmiyor?” ve “neden Yapıldı tek başına işi bitirmiyor?” sorularını cevapla. Bilinmeyen nokta öğrenilir; cevap kullanıcı adına uydurulmaz.
+
+18 Ekim son tasarım kontrolü, 19–21 Ekim prova ve 22 Ekim teslim hedefleri korunur. Açık geri bildirim ve gerekçe işleri tamamlanmadan bütün plan bitmiş sayılmaz. Önceki plan aşağıda tarihsel kaydıyla korunmuştur.
+
+## Önceki çalışma planı — 13 Ekim ilerleme değerlendirmesi
 
 **Teslim: 22 Ekim 2026 Perşembe. Tasarımı tamamlama hedefi: 18 Ekim. Prova: 19–21 Ekim.** Gerçek sunum teslimden sonra; günü henüz doğrulanmadı. Bu plan, aşağıda korunan 9 Ekim takviminin kalan işler için yerini alır. Önceki commit tarihleri ve gerçekleşmiş işlerin tarihleri değiştirilmez.
 

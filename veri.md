@@ -14,7 +14,7 @@ Bu model tek takım içindir. İleride çok takım gereksinimi çıkmadan okul, 
 | active | true | Ayrılan hesabı erişimden çıkarmak, geçmiş izi korumak |
 
 
-Kullanıcı adı 3–30 karakter, harf/rakam/alt çizgi; ad 1–60 karakter. Aynı kullanıcı adı tekrar kullanılmaz. Kimlikler sentetik örnektir, gerçek hesap kurulmamıştır.
+Kullanıcı adı 3–30 karakter, harf/rakam/alt çizgi; ad 1–60 karakter. Aynı kullanıcı adı tekrar kullanılmaz. Tablodaki kimlikler sentetik örnektir; gerçek çalışma veritabanındaki hesap durumunu ifade etmez.
 
 ## requests — görev veya talep
 
@@ -84,7 +84,7 @@ Olaylar değiştirilemez; hata için yeni gerekçeli düzeltme olayı yazılır.
 | state | acik | İncelenmemiş veya çözülmüş bildirimi ayırmak |
 | created_at | 2026-10-08T19:00:00Z | Kuyruk sırası |
 
-Karar ve karar veren events üzerinden okunur. Aynı kişi aynı istek için bir açık bildirim bırakabilir. Bildirim metni/kimliği yalnız danışmana; karar gerekçesi ortak olay akışına görünür. Danışman kendi üstlendiği talebin uyuşmazlığını kendi lehine kapatamaz.
+Karar ve karar veren events üzerinden okunur. Aynı kişi aynı istek için bir açık bildirim bırakabilir. Bildirim metni/kimliği danışmana görünür; gönderen kendi bildirimini ve durumunu da görür. Diğer üyeler görmez. Karar gerekçesi ortak olay akışına görünür. Danışman kendi üstlendiği talebin uyuşmazlığını kendi lehine kapatamaz.
 
 ## sessions — girişin teknik verisi
 

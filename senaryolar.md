@@ -72,3 +72,18 @@ Senaryolar aynı `roller.md`, `akis.md`, `veri.md` ve `ekranlar.md` kuralların�
 - Parolasını unutan Batu danışmana başvurur; kimliği doğrulanır. Hedef hesaba özel kodla 24 saat içinde yeni parola belirler; eski oturumlar kapanır, hesap/geçmiş kalır. Kod ikinci kez çalışmaz. İlk danışmanın aynı kurtarmasını Batu bakım erişimiyle yürütür.
 
 Bunlar tasarım senaryolarıdır; gerçek kayıt, güvenlik veya uygulama testi yapıldığı iddiası değildir.
+
+## 17 Ekim — uygulama ile kontrol eşlemesi
+
+Ayrı test veritabanındaki 40 Django testinin ilgili kontrolleri:
+
+| Senaryo | İlgili doğrulama |
+|---|---|
+| 1. İki aday, bir seçim | test_two_candidates_single_assignee_and_private_notice, test_stale_double_accept_rolls_back, test_offer_note_and_identity_not_leaked, test_approval_only_once |
+| 2. Talep ve ayrı yardım sayımı | test_help_without_due_date, test_personal_task_report_cancel_and_new_help_count_separately |
+| 3. Bırakıp yeniden aday seçme | test_leave_reopens_without_auto_assignment, test_scenario_leave_new_candidate_approves_only_once |
+| 4. Kişisel işi görev olarak açma | test_personal_task_report_cancel_and_new_help_count_separately |
+| 5. 48 saat onaysız bekleme | test_48_hours_no_auto_approval, test_advisor_cannot_arbitrate_own_work |
+| 6. Rol ve üyelik değişimi | test_role_change_applies_to_open_session, test_deactivation_reopens_and_transfers, test_last_advisor_protected |
+
+Akışın beş sorusu akis.md’de cevaplıdır. Eşzamanlı kabul testi eski sürümün reddini doğrular; iki ayrı canlı veritabanı bağlantısında yük testi yapıldığı anlamına gelmez. Senaryo tarihleri örnektir; bugün yapılmış görüşme veya geçmiş tarihli çalışma kaydı değildir. Selim/Arda denemesi ve öğretmen yanıtı hâlâ ayrı açık işlerdir.
