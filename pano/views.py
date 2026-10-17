@@ -123,8 +123,16 @@ def board(request):
         items = items.filter(owner=request.user)
     elif mine == 'ustlendiklerim':
         items = items.filter(assignee=request.user)
+    state = request.GET.get('durum', '')
+    if state not in ['acik', 'ustlenildi', 'onay_bekliyor']:
+        state = ''
+    if state:
+        items = items.filter(status=state)
+    query = request.GET.get('q', '').strip()[:100]
+    if query:
+        items = items.filter(title__icontains=query)
     approved = Event.objects.filter(action='onaylandi', created_at__gte=week_start())
-    return render(request, 'pano/board.html', {'items': items, 'kind': kind, 'mine': mine, 'tasks_total': approved.filter(request__kind='gorev').count(), 'helps_total': approved.filter(request__kind='talep').count(), 'period': Period.objects.first()})
+    return render(request, 'pano/board.html', {'items': items, 'kind': kind, 'mine': mine, 'state': state, 'query': query, 'tasks_total': approved.filter(request__kind='gorev').count(), 'helps_total': approved.filter(request__kind='talep').count(), 'period': Period.objects.first()})
 
 @login_required
 def create_request(request):
@@ -170,7 +178,7 @@ def edit_request(request, pk):
 def detail_context(request, item):
     owner = item.owner_id == request.user.pk
     assigned = item.assignee_id == request.user.pk
-    can_review = request.user.role == 'danisman' and not assigned and (item.flags.exists() or item.needs_review or item.overdue)
+    can_review = request.user.role == 'danisman' and not assigned and (item.flags.filter(state='acik').exists() or item.needs_review or item.overdue)
     can_see_offers = owner or (request.user.role == 'danisman' and item.flags.exists())
     offers = item.applications.select_related('user').all() if can_see_offers else item.applications.select_related('user').filter(user=request.user)
     events = item.events.select_related('actor', 'subject_user')
@@ -215,7 +223,19 @@ def archive(request):
     records = Event.objects.filter(action=result).select_related('request__owner', 'subject_user').order_by('-created_at', '-id')
     if request.GET.get('tur') in ['gorev', 'talep']:
         records = records.filter(request__kind=request.GET['tur'])
-    return render(request, 'pano/archive.html', {'records': records, 'result': result})
+    kind = request.GET.get('tur', '')
+    if kind not in ['gorev', 'talep']:
+        kind = ''
+    period = request.GET.get('donem', '')
+    if period not in ['hafta', 'ay']:
+        period = ''
+    if period == 'hafta':
+        records = records.filter(created_at__gte=week_start())
+    elif period == 'ay':
+        from datetime import datetime, time
+        month_start = timezone.make_aware(datetime.combine(timezone.localdate().replace(day=1), time.min))
+        records = records.filter(created_at__gte=month_start)
+    return render(request, 'pano/archive.html', {'records': records, 'result': result, 'kind': kind, 'period_filter': period})
 
 @login_required
 def notifications(request):

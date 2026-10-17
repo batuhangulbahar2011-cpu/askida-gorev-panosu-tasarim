@@ -56,7 +56,7 @@ def act(actor, item_id, version, action, note='', target=None):
     if advisor:
         if actor.role != 'danisman' or assigned:
             raise PermissionDenied
-        if not (item.flags.exists() or item.needs_review or item.overdue):
+        if not (item.flags.filter(state='acik').exists() or item.needs_review or item.overdue):
             raise RuleError('Danışman kararı için bildirim, gecikme veya 48 saat aşımı gerekir.')
     needed = ['accept', 'done', 'correct', 'leave', 'cancel', 'flag', 'comment'] + advisor_actions
     if action in needed and not note:
@@ -136,6 +136,8 @@ def act(actor, item_id, version, action, note='', target=None):
         event(item, actor, 'geri_cekildi', note, item.assignee)
         notify(item.assignee, item, 'geri_cekildi')
     elif action == 'comment':
+        if item.status == 'kapandi':
+            raise RuleError('Kapalı isteğe yeni yorum eklenemez. İtirazınız varsa danışmana bildirin.')
         item.comments.create(author=actor, body=note)
     elif action == 'flag':
         if len(note) > 500:
@@ -157,7 +159,8 @@ def act(actor, item_id, version, action, note='', target=None):
     else:
         raise RuleError('Geçersiz işlem.')
     if advisor:
-        item.flags.filter(state='acik').update(state='cozuldu')
+        if action != 'clean_comment':
+            item.flags.filter(state='acik').update(state='cozuldu')
         if action != 'resolve_flag':
             event(item, actor, 'danisman_karari', note)
     item.save(update_fields=['status', 'assignee'])

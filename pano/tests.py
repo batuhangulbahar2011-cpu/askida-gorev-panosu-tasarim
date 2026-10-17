@@ -221,3 +221,116 @@ class PanoTests(TestCase):
         data = {'name': 'Yetki', 'username': 'yetki', 'code': raw, 'password': 'New-Safe-Password-735!', 'password_confirm': 'New-Safe-Password-735!', 'role': 'danisman'}
         self.client.post('/kayit/', data)
         self.assertFalse(User.objects.filter(username='yetki').exists())
+
+    def test_board_combines_title_state_and_own_filters(self):
+        self.accept()
+        self.client.force_login(self.a)
+        response = self.client.get('/', {'tur': 'gorev', 'q': 'video', 'durum': 'ustlenildi', 'filtre': 'ustlendiklerim'})
+        self.assertEqual(list(response.context['items']), [self.item])
+        self.assertContains(response, 'name="q"')
+        self.assertContains(response, 'name="durum"')
+        self.assertContains(response, 'tur=talep')
+        response = self.client.get('/', {'tur': 'gorev', 'q': 'olmayan'})
+        self.assertEqual(list(response.context['items']), [])
+        self.assertContains(response, 'Bu filtrelerde istek bulunamadı.')
+
+    def test_unknown_board_filters_fall_back_without_person_report(self):
+        self.client.force_login(self.other)
+        response = self.client.get('/', {'durum': 'kapandi', 'filtre': 'eren'})
+        self.assertEqual(list(response.context['items']), [self.item])
+        self.assertEqual(response.context['state'], '')
+        self.assertNotIn('rows', response.context)
+
+    def test_archive_filters_by_kind_and_local_week(self):
+        self.accept()
+        self.do(self.a, 'done', 'Video hazır.')
+        self.do(self.owner, 'approve')
+        help_item = Request.objects.create(kind='talep', title='Servo yardımı', description='Bağlantı desteği', owner=self.other)
+        self.do(self.b, 'apply', item=help_item)
+        self.do(self.other, 'accept', 'Uygun.', Application.objects.get(request=help_item).pk, help_item)
+        self.do(self.b, 'done', 'Servo çalışıyor.', item=help_item)
+        self.do(self.other, 'approve', item=help_item)
+        Event.objects.filter(request=help_item, action='onaylandi').update(created_at=timezone.now() - timedelta(days=40))
+        self.client.force_login(self.other)
+        response = self.client.get('/arsiv/', {'tur': 'gorev', 'donem': 'hafta'})
+        self.assertEqual([r.request_id for r in response.context['records']], [self.item.pk])
+        response = self.client.get('/arsiv/', {'tur': 'talep', 'donem': 'ay'})
+        self.assertEqual(list(response.context['records']), [])
+        response = self.client.get('/arsiv/', {'tur': 'talep'})
+        self.assertEqual([r.request_id for r in response.context['records']], [help_item.pk])
+
+    def test_closed_request_comment_rejected_but_report_allowed(self):
+        self.do(self.owner, 'cancel', 'İhtiyaç kalmadı.')
+        self.item.refresh_from_db()
+        version = self.item.version
+        with self.assertRaises(RuleError):
+            self.do(self.a, 'comment', 'Kapalı kayda yeni yorum.')
+        self.item.refresh_from_db()
+        self.assertEqual(self.item.version, version)
+        self.assertFalse(self.item.comments.exists())
+        self.do(self.a, 'flag', 'İptalde emeğim incelensin.')
+        self.client.force_login(self.a)
+        response = self.client.get(f'/istek/{self.item.pk}/')
+        self.assertNotContains(response, 'name="action" value="comment"')
+        self.assertContains(response, 'name="action" value="flag"')
+
+    def test_resolved_report_no_longer_grants_advisor_mutation(self):
+        self.do(self.other, 'flag', 'İnceleme ihtiyacı.')
+        self.do(self.advisor, 'resolve_flag', 'Uygunsuzluk görülmedi.')
+        with self.assertRaises(RuleError):
+            self.do(self.advisor, 'advisor_cancel', 'Eski bildirimle iptal.')
+        self.client.force_login(self.advisor)
+        response = self.client.get(f'/istek/{self.item.pk}/')
+        self.assertNotContains(response, 'name="action" value="advisor_cancel"')
+        self.item.refresh_from_db()
+        self.assertEqual(self.item.status, 'acik')
+
+    def test_cleaning_comment_does_not_silently_resolve_report(self):
+        self.do(self.a, 'comment', 'Kişisel bilgi örneği.')
+        self.do(self.other, 'flag', 'Kişisel veri ve görev amacı incelensin.')
+        comment = self.item.comments.get()
+        self.do(self.advisor, 'clean_comment', 'Kişisel bilgi kaldırıldı; amaç incelenecek.', comment.pk)
+        self.assertTrue(Flag.objects.filter(request=self.item, state='acik').exists())
+        comment.refresh_from_db()
+        self.assertNotIn('örneği', comment.body)
+        self.do(self.advisor, 'resolve_flag', 'Amaç incelemesi de tamamlandı.')
+        self.assertFalse(Flag.objects.filter(request=self.item, state='acik').exists())
+
+    def test_personal_task_report_cancel_and_new_help_count_separately(self):
+        self.do(self.other, 'flag', 'Bu kişisel ihtiyaç, takım işi değil.')
+        self.do(self.advisor, 'advisor_cancel', 'Kişisel ihtiyaç için yeni talep açılmalı.')
+        help_item = Request.objects.create(kind='talep', title='Kişisel destek', description='Yardım', owner=self.owner)
+        self.do(self.b, 'apply', item=help_item)
+        self.do(self.owner, 'accept', 'Uygun.', Application.objects.get(request=help_item).pk, help_item)
+        self.do(self.b, 'done', 'Yardım tamam.', item=help_item)
+        self.do(self.owner, 'approve', item=help_item)
+        self.client.force_login(self.other)
+        response = self.client.get('/')
+        self.assertEqual(response.context['tasks_total'], 0)
+        self.assertEqual(response.context['helps_total'], 1)
+        self.assertFalse(Event.objects.filter(request=self.item, action='onaylandi').exists())
+
+    def test_scenario_leave_new_candidate_approves_only_once(self):
+        self.accept()
+        self.do(self.a, 'leave', 'İlk üç slayt hazır, devam edemiyorum.')
+        self.do(self.other, 'apply', 'Kalan kısmı tamamlarım.')
+        self.do(self.owner, 'accept', 'Devam edebilir.', Application.objects.get(request=self.item, user=self.other).pk)
+        self.do(self.other, 'done', 'Sunum tamam.')
+        self.do(self.owner, 'approve')
+        self.assertEqual(list(Event.objects.filter(action='onaylandi').values_list('subject_user_id', flat=True)), [self.other.pk])
+
+    def test_overdue_work_stays_open_and_enters_advisor_queue(self):
+        Request.objects.filter(pk=self.item.pk).update(due_date=timezone.localdate() - timedelta(days=1))
+        self.client.force_login(self.advisor)
+        response = self.client.get('/danisman/')
+        self.assertEqual([item.pk for item in response.context['review']], [self.item.pk])
+        self.item.refresh_from_db()
+        self.assertEqual(self.item.status, 'acik')
+        self.assertFalse(Event.objects.filter(action='onaylandi').exists())
+
+    def test_filter_links_have_one_query_marker(self):
+        self.client.force_login(self.owner)
+        for path in ['/?tur=gorev&q=video&durum=acik', '/arsiv/?tur=gorev&donem=hafta']:
+            response = self.client.get(path)
+            self.assertNotContains(response, 'href="??')
+            self.assertContains(response, 'tur=gorev')
