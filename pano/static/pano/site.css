@@ -64,3 +64,7 @@ body{isolation:isolate}body:before{content:'';position:fixed;inset:0;z-index:0;p
 @media(prefers-reduced-motion:no-preference) and (max-width:850px){[data-nav-ready=true][data-nav-open=true] .top #site-navigation{animation:menu-appear .16s ease-out both}@keyframes menu-appear{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}}
 
 @media(max-width:850px){html:not([data-nav-ready=true]) .top #site-navigation{position:static;grid-column:1/-1;grid-row:2;width:100%;max-height:none;overflow:visible;margin-top:.8rem}}
+
+/* Batu’nun sağladığı özgün Askıda İyilik logoları. */
+.brand-logo{display:block;width:42px;height:42px;flex-shrink:0;object-fit:contain;border-radius:12px}.login-wordmark{background:#fff;border:1px solid #e3e7eb;border-radius:13px;padding:.7rem;margin:0 0 1.4rem}.login-wordmark img{display:block;width:100%;height:auto}.team-avatar{padding:0;overflow:hidden;background:#fff}.team-avatar img{display:block;width:100%;height:100%;object-fit:contain}
+@media(max-width:520px){.brand-logo{width:36px;height:36px;border-radius:10px}.login-wordmark{padding:.5rem;margin-bottom:1.2rem}}

@@ -95,3 +95,7 @@ Güncellemeyi görmek için sunucuyu Ctrl+C → baslat.bat ile yeniden açıp ta
 320/360/390/430/768px danışman menüsü ve 1280px bilgisayar davranışı dahil 52 Chrome kontrolü, yedi sayfayı açan tek Django render testi geçti. Fiziksel telefon testi değildir; kullanıcı kendi cihazında doğrular. Güncelleme için Ctrl+C → baslat.bat → Ctrl+F5.
 
 18 Ekim menü görünümü geri bildirimi sonrası geniş çubuk ve kutu ızgarası kaldırıldı; profil başlığı/ince ikonlar/aktif sayfa vurgusu ve hafif açılır panel kullanıldı. Son tasarımda 57 Chrome kontrolü ve yedi sayfalık tek Django render testi geçti; telefonun fiziksel testi ayrı.
+
+## Askıda İyilik logoları
+
+Batu’nun sağladığı kare logo üst bölümde ve sekme simgesinde; yazılı logo giriş ekranında kullanılır. Özgün JPEG dosyaları pano/static/pano/branding altında değiştirilmeden saklanır. Giriş logosunun beyaz zemini görselin parçasıdır; koyu modda da okunur beyaz çerçevede korunur. Projenin adı Askıda Görev Panosu olarak kalır. 320/390/430/1280px açık/koyu görünüm, görsellerin yüklenmesi/oranı ve sekme simgesi dahil 28 Chrome kontrolü geçti; tek Django render testi yedi sayfayı açtı.
