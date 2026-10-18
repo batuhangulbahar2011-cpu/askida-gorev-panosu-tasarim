@@ -30,7 +30,7 @@
     // Küçük çizim yüzeyi, düşük kare hızı; destek yoksa CSS zemini kalır.
     if (motion.matches || navigator.connection?.saveData) return;
     let gl;
-    try { gl = canvas.getContext('webgl', { alpha: true, premultipliedAlpha: false, antialias: false, depth: false, stencil: false, powerPreference: 'low-power' }); } catch (_) { return; }
+    try { gl = canvas.getContext('webgl', { alpha: false, antialias: false, depth: false, stencil: false, powerPreference: 'low-power' }); } catch (_) { return; }
     if (!gl) return;
     function compile(type, source) {
       const shader = gl.createShader(type);
@@ -46,7 +46,9 @@
         float glow=exp(-length((p-vec2(.78,.72+wave))*vec2(1.1,1.8))*4.);
         float ribbon=exp(-abs(p.y-.68-sin(p.x*4.+t*.18)*.12)*17.)*.24;
         vec3 color=mix(vec3(.22,.55,.36),vec3(.45,.48,.53),dark);
-        gl_FragColor=vec4(color,(glow+ribbon)*mix(.14,.07,dark));
+        // Opak çizim + CSS opacity: sürücünün alpha birleştirmesine bağlı değil.
+        vec3 base=mix(vec3(.961,.969,.957),vec3(.067,.071,.086),dark);
+        gl_FragColor=vec4(mix(base,color,clamp(glow+ribbon,0.,1.)),1.);
       }`);
     if (!vertex || !fragment) return;
     const program = gl.createProgram();

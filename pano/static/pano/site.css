@@ -47,3 +47,7 @@ body{isolation:isolate}body:before{content:'';position:fixed;inset:0;z-index:0;p
 
 /* Koyu zemin antrasit; yeşil yalnız küçük vurgularda. */
 [data-theme=dark] body:before{background:radial-gradient(ellipse at 90% 12%,#aeb6c00a,transparent 58%)}
+
+/* Efektin tüm sayfayı griye boyamasını CSS katmanında da sınırla. */
+.ambient-shader{opacity:.10}
+[data-theme=dark] .ambient-shader{opacity:.06}
