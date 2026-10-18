@@ -87,3 +87,9 @@ Görmek için açık sunucuyu Ctrl+C ile durdurup baslat.bat dosyasını yeniden
 Üst sağdaki ay düğmesi koyu moda, güneş düğmesi açık moda geçirir; seçim tarayıcıda saklanır. Telefonda yalnız simge gösterilir. Arka plandaki hafif ışık/dalga shaderı 20 kare/saniye ve küçük çizim yüzeyiyle çalışır; sekme arkada veya cihazda hareketi azalt seçiliyken durur. Efekt desteklenmezse sabit zemin kalır.
 
 Güncellemeyi görmek için sunucuyu Ctrl+C → baslat.bat ile yeniden açıp tarayıcıda Ctrl+F5 yapın. Tema düğmesi giriş ekranında da kullanılabilir.
+
+## Telefonda gezinme — 18 Ekim
+
+850px ve altındaki ekranlarda üstte Menü düğmesi var. Basınca Pano/Arşiv/Bildirimler ve rolün izin verdiği yönetim seçenekleri iki sütunda açılır; yatay kaydırma gerekmez. Düğmeye yeniden basarak veya Escape ile kapatılır. Tema düğmesi üstte kalır. Bilgisayarda doğrudan menü bağlantıları görünür. JavaScript kapalıysa bağlantılar açık ızgarada kalır.
+
+320/360/390/430/768px danışman menüsü ve 1280px bilgisayar davranışı dahil 52 Chrome kontrolü, yedi sayfayı açan tek Django render testi geçti. Fiziksel telefon testi değildir; kullanıcı kendi cihazında doğrular. Güncelleme için Ctrl+C → baslat.bat → Ctrl+F5.

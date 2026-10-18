@@ -25,6 +25,22 @@
     button.hidden = false;
     apply(theme);
     button.addEventListener('click', () => apply(theme === 'dark' ? 'light' : 'dark', true));
+    const menu = document.getElementById('menu-toggle');
+    if (menu) {
+      function setMenu(open) {
+        root.dataset.navOpen = String(open);
+        menu.setAttribute('aria-expanded', String(open));
+      }
+      setMenu(false);
+      root.dataset.navReady = 'true';
+      menu.hidden = false;
+      menu.addEventListener('click', () => setMenu(menu.getAttribute('aria-expanded') !== 'true'));
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && menu.getAttribute('aria-expanded') === 'true' && window.matchMedia('(max-width:850px)').matches) {
+          setMenu(false); menu.focus();
+        }
+      });
+    }
     const canvas = document.getElementById('ambient-shader');
     const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
     // Küçük çizim yüzeyi, düşük kare hızı; destek yoksa CSS zemini kalır.
