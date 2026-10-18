@@ -90,6 +90,8 @@ Güncellemeyi görmek için sunucuyu Ctrl+C → baslat.bat ile yeniden açıp ta
 
 ## Telefonda gezinme — 18 Ekim
 
-850px ve altındaki ekranlarda üstte Menü düğmesi var. Basınca Pano/Arşiv/Bildirimler ve rolün izin verdiği yönetim seçenekleri iki sütunda açılır; yatay kaydırma gerekmez. Düğmeye yeniden basarak veya Escape ile kapatılır. Tema düğmesi üstte kalır. Bilgisayarda doğrudan menü bağlantıları görünür. JavaScript kapalıysa bağlantılar açık ızgarada kalır.
+850px ve altındaki ekranlarda üst sağda küçük menü simgesi var. Basınca profil bilgisi ve ikonlu Pano/Arşiv/Bildirimler ile rolün izin verdiği yönetim bağlantıları yuvarlatılmış tek sütun panelde açılır; yatay kaydırma gerekmez. Simgeye yeniden basarak, panel dışına dokunarak veya Escape ile kapatılır. Tema düğmesi yanında kalır. Bilgisayarda doğrudan gezinme görünür. JavaScript kapalıysa bağlantılar sayfayı örtmeden açık listede kalır.
 
 320/360/390/430/768px danışman menüsü ve 1280px bilgisayar davranışı dahil 52 Chrome kontrolü, yedi sayfayı açan tek Django render testi geçti. Fiziksel telefon testi değildir; kullanıcı kendi cihazında doğrular. Güncelleme için Ctrl+C → baslat.bat → Ctrl+F5.
+
+18 Ekim menü görünümü geri bildirimi sonrası geniş çubuk ve kutu ızgarası kaldırıldı; profil başlığı/ince ikonlar/aktif sayfa vurgusu ve hafif açılır panel kullanıldı. Son tasarımda 57 Chrome kontrolü ve yedi sayfalık tek Django render testi geçti; telefonun fiziksel testi ayrı.

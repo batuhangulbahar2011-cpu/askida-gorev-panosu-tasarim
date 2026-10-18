@@ -35,6 +35,10 @@
       root.dataset.navReady = 'true';
       menu.hidden = false;
       menu.addEventListener('click', () => setMenu(menu.getAttribute('aria-expanded') !== 'true'));
+      document.addEventListener('pointerdown', event => {
+        const nav = document.getElementById('site-navigation');
+        if (menu.getAttribute('aria-expanded') === 'true' && !menu.contains(event.target) && !nav.contains(event.target) && !button.contains(event.target)) setMenu(false);
+      });
       document.addEventListener('keydown', event => {
         if (event.key === 'Escape' && menu.getAttribute('aria-expanded') === 'true' && window.matchMedia('(max-width:850px)').matches) {
           setMenu(false); menu.focus();
