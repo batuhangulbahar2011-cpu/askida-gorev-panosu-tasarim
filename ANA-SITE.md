@@ -81,3 +81,9 @@ Pano: başlık araması, durum ve kendi açtıkları/üstlendikleri birlikte fil
 Menü açık sayfayı işaretler; klavyeyle İçeriğe geç bağlantısı vardır. Haftalık katkı/yardım toplamları ayrı kartlarda; aktif istek sayısı ve takım amacı panoda görünür. Telefonda filtreler daha kısa, İstek aç düğmesi tam genişliktedir. Sonuçsuz listeden filtreleri kaldırabilir veya istek açabilirsiniz.
 
 Görmek için açık sunucuyu Ctrl+C ile durdurup baslat.bat dosyasını yeniden açın; tarayıcıda Ctrl+F5 yapın. Mevcut hesapla giriş devam eder. Yedi sayfayı kapsayan render testi ve 43 Chrome kontrolü geçti; gerçek telefon ve internet yayını ayrıca yapılır.
+
+## Açık/koyu tema ve efekt
+
+Üst sağdaki ay düğmesi koyu moda, güneş düğmesi açık moda geçirir; seçim tarayıcıda saklanır. Telefonda yalnız simge gösterilir. Arka plandaki hafif ışık/dalga shaderı 20 kare/saniye ve küçük çizim yüzeyiyle çalışır; sekme arkada veya cihazda hareketi azalt seçiliyken durur. Efekt desteklenmezse sabit zemin kalır.
+
+Güncellemeyi görmek için sunucuyu Ctrl+C → baslat.bat ile yeniden açıp tarayıcıda Ctrl+F5 yapın. Tema düğmesi giriş ekranında da kullanılabilir.

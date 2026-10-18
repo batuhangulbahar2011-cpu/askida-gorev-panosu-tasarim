@@ -35,6 +35,14 @@ Kontrol: yedi danışman sayfasını açan bir Django test metodu ve ayrı örne
 
 Kendi gerekçeleri, Selim/Arda denemesi ve kaptan adaylığına öğretmen yanıtı hâlâ açık; 18 Ekim tasarım hedefi ve 19–21 prova/22 teslim takvimi bu görsel çalışmayla tamamlanmış sayılmaz. İnternet yayını yapılmadı.
 
+### 18 Ekim — açık/koyu tema ve hafif shader
+
+Batu üstte basıldığında koyu, tekrar basıldığında açık moda geçen düğme; hafif shader ve animasyon istedi. Asıl proje klasöründe uygulandı; yedeğe dokunulmadı.
+
+Üst sağda güneş/ay düğmesi; ilk kullanım açık tema, seçim yalnız bu tarayıcıda hatırlanır. Sayfalar arasında ve yenilemede korunur. Küçük WebGL yüzeyinde 20 kare/saniye ışık/dalga efekti, kısa giriş ve kart geçişleri kullanılır. Sekme gizliyken çizim durur; azaltılmış hareket/veri tasarrufunda shader başlatılmaz. WebGL yoksa sabit zemin; depolama kapalıysa oturum içi tema geçişi çalışır. Yeni kütüphane veya dış servis yoktur.
+
+Kontrol: yedi sayfayı açan bir Django render testi ve ayrı örnek DB/Chrome ile 70 tarayıcı kontrolü geçti. Açık-koyu geçiş, yenilemede saklama, klavye, 320/390/1280px, azaltılmış hareket, WebGL/depoya erişim yokluğu ve mevcut iş akışları kontrol edildi. WebGL test ortamında desteklendi; 427×300 çizim yüzeyinde GL hatası yoktu. Bu cihaz performans ölçümü veya fiziksel telefon testi değildir. Gerçek hesap/veri ve iş kuralları değiştirilmedi.
+
 ## 17 Ekim — güncel durum ve kalan işler
 
 17 Ekim’de mevcut Django sitesi üzerinden devam edildi. Panoya başlık araması ve durum filtresi; arşive tür/tarih filtresi eklendi. Kapalı kayda yorum yazma, çözülmüş şikâyetle danışman müdahalesi ve yorum temizlerken şikâyeti kendiliğinden kapatma açıkları düzeltildi. Ayrı veritabanında 40 Django testi geçti. Bu kontrol gerçek kullanıcı görüşmesi değildir.

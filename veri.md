@@ -147,3 +147,7 @@ Gerçek uygulamada tasarımdaki `users.name/role/active` Django özel kullanıc�
 Django session tablosu `session_key/session_data/expire_date` adlarını kullanır: hesap kimliği ve oturum doğrulama bilgisi giriş için gereklidir. Cookie'de oturum anahtarı vardır; parola açık saklanmaz. Oturum ömrü 12 saattir, parola değişimi eski oturumun doğrulamasını geçersizleştirir. Framework tablo/alan adları bağımsız bir token sistemi eklemez.
 
 Otomatik saklama/yedek işçisi bu yerel ilk sürümde kurulmadı. 90 günlük dönem temizliği ve teknik kayıt temizliği için ANA-SITE.md bakım komutları işletilir; yayın kurulurken çalıştırma takvimi ve sağlayıcı kayıtları ayrıca yapılandırılır. Gerçek çalışma DB'si ve yerel gizli anahtar repoya alınmaz.
+
+## Tarayıcı tema tercihi — 18 Ekim
+
+Tarayıcı localStorage içinde askida-theme anahtarı yalnız light veya dark değerini tutar; hesabı, parolayı veya faaliyet bilgisini içermez, sunucuya gönderilmez. Amaç aynı tarayıcıda yenileme ve sayfa değişiminde tema seçimini korumaktır. Kullanıcı tarayıcı site verilerini temizleyince varsayılan açık temaya dönülür. Depolamaya izin yoksa düğme yine çalışır, seçim yeniden açılışta saklanmaz. Shader için fare/cihaz kimliği veya takip verisi toplanmaz.
