@@ -45,8 +45,8 @@
         vec2 p=uv;float wave=sin(p.x*5.5+t*.22)*.07;
         float glow=exp(-length((p-vec2(.78,.72+wave))*vec2(1.1,1.8))*4.);
         float ribbon=exp(-abs(p.y-.68-sin(p.x*4.+t*.18)*.12)*17.)*.24;
-        vec3 color=mix(vec3(.22,.55,.36),vec3(.20,.65,.43),dark);
-        gl_FragColor=vec4(color,(glow+ribbon)*mix(.14,.22,dark));
+        vec3 color=mix(vec3(.22,.55,.36),vec3(.45,.48,.53),dark);
+        gl_FragColor=vec4(color,(glow+ribbon)*mix(.14,.07,dark));
       }`);
     if (!vertex || !fragment) return;
     const program = gl.createProgram();
