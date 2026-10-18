@@ -33,3 +33,7 @@ Ana Django sitesinde üyelerin görev açamaması, görevde amaç/son tarih zoru
 ## 17 Ekim ek kontrolü
 
 40 Django testi geçti. Yeni kontroller: görev/talep sayımlarının ayrılması; bırakıp yeni adayla tamamlamada tek onay; geciken işin açık kalması; kapalı isteğe yorumun reddi ve itirazın korunması; çözülmüş şikâyetin tek başına müdahale yetkisi vermemesi; kişisel veri temizliğinin incelemeyi kendiliğinden kapatmaması. Pano başlık/durum/kendi ilişkisi filtreleri kişi sıralaması oluşturmaz; arşiv yalnız tür ve tarih aralığıyla süzülür.
+
+## 18 Ekim teslim öncesi tekrar kontrol
+
+Son kod sürümünde 40 Django testi ve ayrı örnek DB/Chrome oturumlarında 43 uçtan uca kontrol geçti. Rol/sahiplik, gizli teklifler, ortak yorumlar, ayrı görev/yardım sayımı, kayıt kodu, durum/sürüm ve temel mobil akışlar yeniden kontrol edildi. Açık kullanıcı/öğretmen görüşmeleri veya öğrenci gerekçesi bu testlerle tamamlanmış sayılmaz. Logolar/tema/mobil menü sunumu altı değişmez kuralı değiştirmez.

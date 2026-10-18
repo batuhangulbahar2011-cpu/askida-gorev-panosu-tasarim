@@ -2,7 +2,26 @@
 
 Bu tasarım, Askıda İyilik takımının takım görevlerini ve kişisel yardım taleplerini ayrı izleyebilmesi için hazırlanmıştır. Açan kişi adayları değerlendirir, birini seçer ve sonucu onaylar. Takım toplamları herkes tarafından, kişi bazlı özet yalnız danışman tarafından görülür. Pilot, telefon ve bilgisayardan kullanılan sade bir web panosu olarak önerilmiştir. Bu depo sistem tasarımı ve üç ekranlık örnek web demosu içerir. Gerçek hesaplı Django uygulamasının yerel ilk sürümü 13 Ekim’de başlatıldı; [ana site rehberi](ANA-SITE.md). İnternet yayını ayrıca yapılacaktır.
 
-**Durum:** 2026-10-09 tarihinde akış kararları güncellendi. Belgedeki zorunlu kurallar uygulanmıştır; gerekçeli bırakma Batu tarafından kabul edildi. 10 Ekim öğretmen geri bildirimiyle onay takibi sadeleştirildi: 12 saatlik hatırlatma kaldırıldı, yalnız 48 saat danışman eşiği kaldı; saklanan durumlar beşten dörde indi. Son tarih kararı Batu tarafından Codex'e bırakıldı: görevde zorunlu, talepte isteğe bağlı. Dönem sonrası 90 günlük kayıt saklama Batu tarafından kabul edildi; 12 Ekim’de Batu gerçek uygulama için Django’yu seçti. Bu metin AI desteğiyle hazırlanmıştır; Batu gerekçeleri anlayıp kendi görüşüne göre düzenlemeden nihai teslim sayılmaz.
+**Karar geçmişi (9–12 Ekim):** 2026-10-09 tarihinde akış kararları güncellendi. Belgedeki zorunlu kurallar uygulanmıştır; gerekçeli bırakma Batu tarafından kabul edildi. 10 Ekim öğretmen geri bildirimiyle onay takibi sadeleştirildi: 12 saatlik hatırlatma kaldırıldı, yalnız 48 saat danışman eşiği kaldı; saklanan durumlar beşten dörde indi. Son tarih kararı Batu tarafından Codex'e bırakıldı: görevde zorunlu, talepte isteğe bağlı. Dönem sonrası 90 günlük kayıt saklama Batu tarafından kabul edildi; 12 Ekim’de Batu gerçek uygulama için Django’yu seçti. Bu metin AI desteğiyle hazırlanmıştır; Batu gerekçeleri anlayıp kendi görüşüne göre düzenlemeden nihai teslim sayılmaz.
+
+## 18 Ekim — teslim öncesi son kontrol
+
+Teknik dosya ve uygulama kontrolü tamamlandı; aşağıdaki açık öğrenci/görüşme işleri nedeniyle bütün teslim koşulları bitmiş sayılmıyor. Alt bölümler önceki aşamaların o günkü kayıtlarını korur.
+
+| Kontrol | 18 Ekim sonucu |
+|---|---|
+| Sekiz zorunlu tasarım dosyası | Mevcut ve dolu; 11 yerel Markdown bağlantısı kontrol edildi, eksik yok. |
+| Roller, sahiplik, dört durum, 48 saat ve 90 gün | Dosyalar arası karşılaştırıldı; görev/talep ayrımı, sahip onayı ve tek üstlenen korunuyor. |
+| Dört zorunlu ve iki ek senaryo / beş akış sorusu | Senaryolar, geçişler ve 17 Ekim test eşlemesi karşılaştırıldı; yeni akış değişikliği gerekmedi. |
+| Veri alanları ve altı değişmez kural | Gerekçeler/erişim/saklama karşılaştırıldı; puan, özel sohbet veya ek kişisel veri eklenmedi. |
+| Son uygulama testleri | Ayrı test veritabanında 40 Django testi ve ayrı Chrome oturumlarında 43 uçtan uca kontrol geçti. |
+| Mobil görünüm / tema / logolar | Kompakt ikonlu menü, antrasit açık-koyu düzeni ve özgün logolar mevcut; ilgili 57 menü/28 logo kontrolleri aşamalarında geçti. Bunlar kullanıcı sayısı veya tek test toplamı değildir. |
+| Git kapsamı | Çalışma DB’si, yerel gizli anahtar ve .venv Git dışında; örnek test hesapları gerçek DB’ye eklenmedi. |
+| Yayın ve bakım kararı | Batu 18 Ekim’de bakımını kendisinin yapacağını, VDS veya hosting üzerinde çalıştıracağını söyledi. Sağlayıcı/paket seçilmedi; satın alma ve internet yayını yapılmadı. |
+
+**Açık kalanlar:** Batu’nun Django tercihini ve temel tasarım nedenlerini kendi cümleleriyle açıklaması; Selim/Arda ihtiyaç denemesinin notları; kaptanın göreve adaylığına öğretmen yanıtı. Yeni görüşme sonucu bu oturumda bildirilmedi. Kullanıcının paylaştığı dar ekran görüntüleri geri bildirim olarak işlendi; fiziksel telefonun dokunmatik/gerçek sunucu son sürüm denemesi tamamlandı sayılmaz.
+
+**Takvim:** 19–21 Ekim’de gerekçe ve beş dakikalık prova; 22 Ekim teslim. Yayın sağlayıcısı seçimi ve gerçek dağıtım ayrı işlerdir. [Proje deposu](https://github.com/batuhangulbahar2011-cpu/askida-gorev-panosu-tasarim), [çalıştırma/bakım](ANA-SITE.md).
 
 ## Dosyalar
 
@@ -43,7 +62,7 @@ Batu üstte basıldığında koyu, tekrar basıldığında açık moda geçen d�
 
 Kontrol: yedi sayfayı açan bir Django render testi ve ayrı örnek DB/Chrome ile 70 tarayıcı kontrolü geçti. Açık-koyu geçiş, yenilemede saklama, klavye, 320/390/1280px, azaltılmış hareket, WebGL/depoya erişim yokluğu ve mevcut iş akışları kontrol edildi. WebGL test ortamında desteklendi; 427×300 çizim yüzeyinde GL hatası yoktu. Bu cihaz performans ölçümü veya fiziksel telefon testi değildir. Gerçek hesap/veri ve iş kuralları değiştirilmedi.
 
-## 17 Ekim — güncel durum ve kalan işler
+## 17 Ekim — önceki kontrol ve o günün açık işleri
 
 17 Ekim’de mevcut Django sitesi üzerinden devam edildi. Panoya başlık araması ve durum filtresi; arşive tür/tarih filtresi eklendi. Kapalı kayda yorum yazma, çözülmüş şikâyetle danışman müdahalesi ve yorum temizlerken şikâyeti kendiliğinden kapatma açıkları düzeltildi. Ayrı veritabanında 40 Django testi geçti. Bu kontrol gerçek kullanıcı görüşmesi değildir.
 
@@ -133,7 +152,7 @@ GitHub'a yalnız gerçekten yapılan değişiklikler açıklayıcı commit mesaj
 
 Kaynak: Özgür Girgin, **GOREV-TANIMI.pdf**, Bölüm 1–10; Batu'nun sağladığı dört sayfalık görev belgesi. Yerel kaynak: `C:\Users\Batuhann\Desktop\GOREV-TANIMI.pdf`. Belgenin kendisi bu depoya kopyalanmadı.
 
-2026-10-09 kararları (10 Ekim'de sadeleştirildi): Yapıldı bildiriminden 48 saat sonra danışman incelemesi; 12 saatlik hatırlatma kaldırıldı; otomatik onay yoktur. Görevde son tarih zorunlu, talepte isteğe bağlıdır; takım işlerini planlamak ve kişisel yardımı gereksiz tarihle sınırlamamak amaçlanır. Üstlenen kısa gerekçe ve varsa yarım kalan iş notuyla bırakabilir; istek yeniden adaylara açılır, yeni üstleneni açan kişi seçer. Geciken görev kapanmaz; “Gecikti” etiketiyle danışman inceleme kuyruğuna girer. Sonuç eksikse açan kişi gerekçeli düzeltme ister; iş aynı üstlenende kalır ve yeniden Yapıldı bildirimiyle onaya sunulur. Bu iki akış Batu tarafından kabul edildi. 12 Ekim yeni hesap kararı önceki geçici parola düzeninin yerini alır: ilk danışman kurulumda kendi parolasını belirler; danışman tek kullanımlık kayıt kodu üretir. Kod 7 gün geçerli ve kullanılmadan iptal edilebilir. Kişi kendi parolasıyla üye kaydolur; rolü yalnız danışman değiştirir. Dönem kayıtları danışman dönemi kapattıktan sonra 90 gün tutulur, ardından silinir; süre tek tek görevlerin tamamlanmasından başlamaz. Aktif kullanıcı hesapları korunur. Batu, eski görevleri sonraki yıl görmeye ihtiyaç duymadığını söyleyerek bu saklama kararını kabul etti. Django tercih edilmiştir; başlangıç yayın planı ücretsiz PythonAnywhere’dir. Danışman görevi üstlenmez; kaptanın üye gibi göreve aday olmasına izin verilmesi belge tablosundaki belirsizlik için pilot önerisidir ve Özgür öğretmene doğrulatılmalıdır. Teslim tarihi 22 Ekim 2026 Perşembe olarak Batu tarafından bildirildi; tasarım 18 Ekim'de bitecek şekilde planlandı. İlk sekiz dosyanın GitHub yüklemesi 9 Ekim’de 2bba8aa commit’iyle doğrulandı; 11 Ekim sadeleştirmesi yerel 6e17d6d commit’idir. Yeni değişikliklerin gönderimi, öğretmen geri bildirimi ve sunum ayrıca takip edilir.
+2026-10-09 kararları (10 Ekim'de sadeleştirildi): Yapıldı bildiriminden 48 saat sonra danışman incelemesi; 12 saatlik hatırlatma kaldırıldı; otomatik onay yoktur. Görevde son tarih zorunlu, talepte isteğe bağlıdır; takım işlerini planlamak ve kişisel yardımı gereksiz tarihle sınırlamamak amaçlanır. Üstlenen kısa gerekçe ve varsa yarım kalan iş notuyla bırakabilir; istek yeniden adaylara açılır, yeni üstleneni açan kişi seçer. Geciken görev kapanmaz; “Gecikti” etiketiyle danışman inceleme kuyruğuna girer. Sonuç eksikse açan kişi gerekçeli düzeltme ister; iş aynı üstlenende kalır ve yeniden Yapıldı bildirimiyle onaya sunulur. Bu iki akış Batu tarafından kabul edildi. 12 Ekim yeni hesap kararı önceki geçici parola düzeninin yerini alır: ilk danışman kurulumda kendi parolasını belirler; danışman tek kullanımlık kayıt kodu üretir. Kod 7 gün geçerli ve kullanılmadan iptal edilebilir. Kişi kendi parolasıyla üye kaydolur; rolü yalnız danışman değiştirir. Dönem kayıtları danışman dönemi kapattıktan sonra 90 gün tutulur, ardından silinir; süre tek tek görevlerin tamamlanmasından başlamaz. Aktif kullanıcı hesapları korunur. Batu, eski görevleri sonraki yıl görmeye ihtiyaç duymadığını söyleyerek bu saklama kararını kabul etti. Django tercih edilmiştir; 18 Ekim güncel yayın yönü Batu’nun seçimiyle VDS veya hosting, bakım sahibi Batu’dur; paket/sağlayıcı seçilmedi. Danışman görevi üstlenmez; kaptanın üye gibi göreve aday olmasına izin verilmesi belge tablosundaki belirsizlik için pilot önerisidir ve Özgür öğretmene doğrulatılmalıdır. Teslim tarihi 22 Ekim 2026 Perşembe olarak Batu tarafından bildirildi; tasarım 18 Ekim'de bitecek şekilde planlandı. İlk sekiz dosyanın GitHub yüklemesi 9 Ekim’de 2bba8aa commit’iyle doğrulandı; 11 Ekim sadeleştirmesi yerel 6e17d6d commit’idir. Yeni değişikliklerin gönderimi, öğretmen geri bildirimi ve sunum ayrıca takip edilir.
 
 ## 12 Ekim kararları ve sade web demo
 
@@ -149,7 +168,7 @@ Kaynak: Özgür Girgin, **GOREV-TANIMI.pdf**, Bölüm 1–10; Batu'nun sağladı
 
 Deneme: Arda olarak tanıtım videosu görevini aç, Hakkı’yı seç. Eren’e geçip nazik bildirimi ve yalnız kendi teklifini gör. Hakkı olarak Yapıldı bildir; Arda olarak onayla veya gerekçeyle düzeltme iste. Batu ile yardım talebi açmayı dene.
 
-GitHub Pages için depo Settings → Pages → Deploy from a branch → main / root kullanılabilir. Önce gerçek commit/push gerekir; bu ayarın yapıldığı veya sitenin yayımlandığı varsayılmaz. Demo GitHub Pages içindir; gerçek Django sitesi ücretsiz PythonAnywhere başlangıç planıyla ayrıca kurulacaktır.
+GitHub Pages için depo Settings → Pages → Deploy from a branch → main / root kullanılabilir. Önce gerçek commit/push gerekir; bu ayarın yapıldığı veya sitenin yayımlandığı varsayılmaz. Demo GitHub Pages içindir; gerçek Django sitesi 18 Ekim güncel kararına göre VDS veya hosting üzerinde ayrıca kurulacaktır; sağlayıcı/paket seçilmedi.
 
 12 Ekim yeni sıra önce kararlar → tasarım güncellemesi → üç ekranlık demo → Selim/Arda geri bildirimi. 9 Ekim tarihli çalışma planı geçmiş plan olarak korunur; 13 Ekim güncel planı kalan işlerde esas alınır; işler geriye dönük yapılmış sayılmaz. Cuma sonraki hafta planlanır; 22 Ekim teslim tarihi değişmez.
 

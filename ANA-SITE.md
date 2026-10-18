@@ -64,7 +64,7 @@ py -3 -m venv .venv
 .venv\Scripts\python.exe manage.py test pano
 ```
 
-Gerçek yayın planı ücretsiz PythonAnywhere; hesap ve dağıtım bu adımda yapılmaz. Yayında `DJANGO_DEBUG=0`, güçlü `DJANGO_SECRET_KEY`, gerçek alan adıyla `DJANGO_ALLOWED_HOSTS`, HTTPS ve statik dosya sunumu gerekir. `collectstatic` ve `check --deploy` dağıtımdan önce çalıştırılır. WSGI uygulaması `config.wsgi.application`. Geliştirme sunucusu internette kullanılmaz. Sağlayıcı erişim logları ve yedek saklama ayarları ayrıca kontrol edilir; yerel uygulama altyapı sağlayıcısının kayıtlarını kontrol etmiş sayılmaz.
+18 Ekim güncel yayın yönü Batu’nun beyanıyla VDS veya hosting; bakım sahibi Batu’dur. Sağlayıcı/paket henüz seçilmedi, hesap/satın alma/dağıtım bu adımda yapılmaz. Önceki PythonAnywhere önerisi artık kesin yayın planı değildir. Yayında `DJANGO_DEBUG=0`, güçlü `DJANGO_SECRET_KEY`, gerçek alan adıyla `DJANGO_ALLOWED_HOSTS`, HTTPS ve statik dosya sunumu gerekir. `collectstatic` ve `check --deploy` dağıtımdan önce çalıştırılır. WSGI uygulaması `config.wsgi.application`. Geliştirme sunucusu internette kullanılmaz. Sağlayıcı erişim logları ve yedek saklama ayarları ayrıca kontrol edilir; yerel uygulama altyapı sağlayıcısının kayıtlarını kontrol etmiş sayılmaz.
 
 Başvuru kaynakları: [Django hesap modeli](https://docs.djangoproject.com/en/5.2/topics/auth/customizing/), [SQLite işlemleri](https://docs.djangoproject.com/en/5.2/ref/databases/#sqlite-notes), [yayın kontrol listesi](https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/).
 
@@ -99,3 +99,7 @@ Güncellemeyi görmek için sunucuyu Ctrl+C → baslat.bat ile yeniden açıp ta
 ## Askıda İyilik logoları
 
 Batu’nun sağladığı kare logo üst bölümde ve sekme simgesinde; yazılı logo giriş ekranında kullanılır. Özgün JPEG dosyaları pano/static/pano/branding altında değiştirilmeden saklanır. Giriş logosunun beyaz zemini görselin parçasıdır; koyu modda da okunur beyaz çerçevede korunur. Projenin adı Askıda Görev Panosu olarak kalır. 320/390/430/1280px açık/koyu görünüm, görsellerin yüklenmesi/oranı ve sekme simgesi dahil 28 Chrome kontrolü geçti; tek Django render testi yedi sayfayı açtı.
+
+## 18 Ekim kapanış kontrolü
+
+Son kod sürümünde ayrı veritabanında 40 Django testi ve 43 uçtan uca Chrome kontrolü geçti. İlgili mobil menü ve logo kontrollerinin önceki sonuçları sırasıyla 57/28’dir; kullanıcı testi sayısı değildir. Sekiz zorunlu belgenin yerel bağlantıları geçerli. Yayına çıkma ve gerçek telefonda son sürüm teyidi ayrıdır. Kişisel veritabanı/gizli anahtar/.venv Git dışında kalır.

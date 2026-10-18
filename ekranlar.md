@@ -131,3 +131,11 @@ Pasifleştirme öncesi devredilecek sahiplik ve tekrar açılacak işler listele
 Adaylar çizimi yalnız sahibi görünümüdür. Aday kendi teklifini, diğer üyeler seçilmeyen kayıtları veya sayılarını görmez. Danışman bildirilen sorunu incelemek için ilgili teklifleri açabilir. Teklif kutusu “Bu notu istek sahibi ve danışman inceleme sırasında görebilir” açıklamasını; ortak yorum kutusu “Bu yorumu tüm takım görebilir” açıklamasını taşır. Seçilmeyen kişiye nazik bildirim gelir; kişinin yalnız kendi bildirimleri açılır.
 
 Danışman yönetiminin dört bölümü: üyeler/rol/pasifleştirme/parola yenileme; kayıt kodları/iptal/süre; geciken onay/görev/bildirim incelemesi; görev ve yardımın ayrı faaliyet özeti. Son aktif danışman korunur. İlk danışmanın kurtarmasında kimliği doğrulayan Batu bakım erişimini kullanır. Bu yönetim ekranı üç ekranlık demoya eklenmez.
+
+## 18 Ekim — gerçek sitede mobil gezinme ve tema
+
+Yukarıdaki çizimler ekranların işlevini gösterir. Gerçek Django sitesinde 850px altında üst sağdaki küçük menü simgesi; profil/rol başlıklı, ince ikonlu tek sütun açılır paneli açar. Panel sayfayı aşağı itmez; dışına dokunma, Escape veya aynı simgeyle kapanır. Masaüstünde doğrudan menü vardır. Danışman özeti/Takım bağlantıları yalnız ilgili role görünür; sunucu izin denetimi sürer.
+
+Tema düğmesi üstte kalır; seçim tarayıcıda hatırlanır. Açık tema açık, koyu tema antrasit/gri yüzeyler kullanır; yeşil küçük vurgudur. Shader etkisi CSS ile sınırlıdır, azaltılmış harekette çalışmaz. İstek açta yan yana görev/talep kartları; panoda başlık/durum/kendi ilişkisi; arşivde tür/tarih filtreleri vardır. Bildirimler gerçek sitede ayrı sayfadır; 12 Ekim demo kutusu gerçek siteyle karıştırılmaz.
+
+Batu’nun verdiği kare Askıda İyilik logosu üstte/sekmede, yazılı logo giriş ekranındadır. Uygulama adı Askıda Görev Panosu olarak kalır. Görsellerin oranı telefonda korunur. Gerçek kullanıcının ekranı önizlemeden farklıysa ekran görüntüsü geri bildirimiyle düzeltilir; otomatik tarayıcı kontrolü fiziksel cihaz teyidi sayılmaz.

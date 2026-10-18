@@ -32,7 +32,7 @@ Web sunucusu + tek uygulama
 SQLite: kullanıcı + istek + adaylık + yorum + olay + bildirim
 ```
 
-Her ekran aynı kaynağı okur. Danışman verisi istemciye gönderilip CSS ile saklanmaz; sunucu yetkisiz isteği reddeder. Arayüz düzenli yeniden yükleme ile güncellenebilir; ilk pilot için gerçek zamanlı bağlantı, mağaza dağıtımı veya push şart değildir. 48 saatlik danışman kuyruğu olay zamanlarından hesaplanır; sayfa açıldığında ve günlük kontrolde görünür. İnternet yayınına geçilirse HTTPS ve güvenli oturum çerezleri gerekir; geliştirme sunucusu doğrudan yayınlanmaz. Üç ekranlık demo GitHub Pages planındadır; gerçek Django uygulaması için ücretsiz PythonAnywhere başlangıç planıyla ilerlenir. Hesap açılışı/yayın henüz yapılmış sayılmaz.
+Her ekran aynı kaynağı okur. Danışman verisi istemciye gönderilip CSS ile saklanmaz; sunucu yetkisiz isteği reddeder. Arayüz düzenli yeniden yükleme ile güncellenebilir; ilk pilot için gerçek zamanlı bağlantı, mağaza dağıtımı veya push şart değildir. 48 saatlik danışman kuyruğu olay zamanlarından hesaplanır; sayfa açıldığında ve günlük kontrolde görünür. İnternet yayınına geçilirse HTTPS ve güvenli oturum çerezleri gerekir; geliştirme sunucusu doğrudan yayınlanmaz. Üç ekranlık demo GitHub Pages planındadır; gerçek Django uygulaması için Batu’nun 18 Ekim kararı VDS veya hosting yönündedir; sağlayıcı ve paket henüz seçilmedi. Hesap açılışı/yayın henüz yapılmış sayılmaz.
 
 ## Dayanışma Ağı ile ilişki
 
@@ -52,13 +52,21 @@ Batu’nun 12 Ekim kendi beyanı: “senin önerin ile daha kolay erişebilirlik
 
 Kurulum kaydına göre .venv içinde Django 5.2.18 kurulmuştur; requirements.txt paketleri sabitler. Global Python değiştirilmez. Uygulama, demo, GitHub yayını ve gerçek hesap kurulumu birbirinden ayrı sonuçlardır.
 
-## Yayın ve bakım
+## Güncel yayın ve bakım kararı — 18 Ekim
+
+Batu’nun doğrudan yanıtı: “ben yapacağım çalşıtırma konusunda vds yada hostink ten çalıştırcam”. Bakım sahibi Batu’dur; yayın yönü VDS veya hosting. Önceki PythonAnywhere önerisi güncel kesin planın yerini tutmaz. Sağlayıcı, paket, alan adı ve bütçe henüz seçilmedi; hesap açılışı/satın alma/dağıtım yapılmadı.
+
+Paket seçilince Django/Python çalıştırma yöntemi, HTTPS, statik dosyalar, kalıcı veritabanı ve yedek/temizlik işletimi doğrulanır. Kurulu yerel site satın alınmış veya internete yayımlanmış sayılmaz. Teknik komutlar ANA-SITE.md’de, verinin saklama/erişim sınırları veri.md’dedir. Otomatik bakım kurulmadı.
+
+Bu yanıt bakım ve yayın yönünü açıklıyor; Django’yu alternatifine göre neden seçtiğine dair kendi gerekçesinin tamamlandığı anlamına gelmez. 12 Ekim kısa seçim beyanı yukarıda korunur; öğrenci sunumda gerekçeyi kendi cümleleriyle savunmalıdır.
+
+## Önceki yayın önerisi — 12 Ekim
 
 Demo: GitHub Pages’te HTML/CSS/JavaScript. Gerçek uygulama: PythonAnywhere ücretsiz başlangıç planı; bakım Batu’da, Codex oturumlarda yardımcı. Ücretsiz planda bir web uygulaması, 512 MiB toplam hesap alanı ve bir aylık süre uzatma takibi vardır (12 Ekim resmî belge kontrolü). Kurulum boyutu/kullanımı yayın sırasında ölçülür; yedekler PC’de tutulacak şekilde planlanır. Otomatik kota izleme, yedekleme veya sürekli bakım henüz kurulmadı.
 
 Kaynaklar: [Ücretsiz plan](https://help.pythonanywhere.com/pages/FreeAccountsFeatures/), [süre uzatma](https://blog.pythonanywhere.com/129/), [Django yayını](https://help.pythonanywhere.com/pages/DeployExistingDjangoProject/), [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages).
 
-## 17 Ekim — yayın planı ve öğrenci gerekçesi kontrolü
+## Önceki kontrol — 17 Ekim yayın önerisi ve öğrenci gerekçesi
 
 PythonAnywhere resmî ücretsiz planı 17 Ekim’de tekrar kontrol edildi: 1 web uygulaması/1 worker, 512 MiB alan ve 1 aylık uzatma takibi var. Yeni ücretsiz hesapta zamanlanmış görev yok; bu nedenle otomatik günlük temizlik/yedek çalışacağı varsayılamaz. Bakım sahibi Batu, teknik_temizle ve donem_temizle komutlarının takibini ANA-SITE.md üzerinden yapmalı; otomatik zamanlayıcı ayrıca kurulmadan işletilmiş sayılmaz. Kaynak: [güncel ücretsiz hesap özellikleri](https://help.pythonanywhere.com/pages/FreeAccountsFeatures/), [2026 değişikliği](https://blog.pythonanywhere.com/221/). Hesap açılışı ve internet yayını henüz yapılmadı.
 
