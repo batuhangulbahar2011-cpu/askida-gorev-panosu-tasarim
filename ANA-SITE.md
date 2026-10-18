@@ -75,3 +75,9 @@ Pano: başlık araması, durum ve kendi açtıkları/üstlendikleri birlikte fil
 40 Django testi ayrı veritabanında geçti. Mevcut sunucu açıksa Ctrl+C, sonra baslat.bat ile yeniden başlat ve tarayıcıda Ctrl+F5 yap. Yeni hesap açman gerekmez. İnternet yayını ve gerçek telefon/takım denemesi ayrı açık işlerdir.
 
 17 Ekim son tarayıcı kontrolü: ayrı örnek DB ve Chrome oturumlarında 40 kontrol geçti; 320/390/1280px taşma denetimleri, filtrelerin kullanımı, sekmede korunması, kapalı kayıt ve teklif gizliliği. JavaScript hatası yok. Masaüstü pano ve mobil detay görüntüleri incelendi. Fiziksel telefon testi değildir.
+
+## 18 Ekim arayüz güncellemesi
+
+Menü açık sayfayı işaretler; klavyeyle İçeriğe geç bağlantısı vardır. Haftalık katkı/yardım toplamları ayrı kartlarda; aktif istek sayısı ve takım amacı panoda görünür. Telefonda filtreler daha kısa, İstek aç düğmesi tam genişliktedir. Sonuçsuz listeden filtreleri kaldırabilir veya istek açabilirsiniz.
+
+Görmek için açık sunucuyu Ctrl+C ile durdurup baslat.bat dosyasını yeniden açın; tarayıcıda Ctrl+F5 yapın. Mevcut hesapla giriş devam eder. Yedi sayfayı kapsayan render testi ve 43 Chrome kontrolü geçti; gerçek telefon ve internet yayını ayrıca yapılır.

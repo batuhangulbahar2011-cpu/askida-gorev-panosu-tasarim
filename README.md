@@ -25,6 +25,16 @@ Bu tasarım, Askıda İyilik takımının takım görevlerini ve kişisel yardı
 - Geciken onay danışmana gider: emeğin belirsiz süre beklememesi için.
 - Web önceliklidir: takım üyelerinin uygulama kurmadan aynı panoya ulaşabilmesi için.
 
+## 18 Ekim — görünüm ve kullanım kolaylığı
+
+Batu siteyi denerken hata görmediğini, daha geliştirilebileceğini söyledi; önceliği görünüm ve kullanım kolaylığı olarak seçti (kullanıcı beyanı; bütün olası hataların bulunmadığı anlamına gelmez).
+
+Mevcut yeşil tema korunarak açık sayfayı gösteren gezinme, klavyede içeriğe geçiş, ayrı haftalık takım/yardım kartları, aktif istek sayısı, görev kartında takım amacı ve yazılı durum etiketleri düzenlendi. Mobilde arama tam satır, iki seçim yan yana; düğmeler en az 44px ve menü gerektiğinde kendi içinde kaydırılabilir. Sonuçsuz listeden filtreleri kaldırma ve yeni istek açma yolları belirginleştirildi.
+
+Kontrol: yedi danışman sayfasını açan bir Django test metodu ve ayrı örnek DB/Chrome oturumlarında 43 tarayıcı kontrolü geçti. 320/390/1280px taşma, gerçek giriş/teklif/onay/filtre akışları, aktif gezinme ve klavye atlama bağlantısı kontrol edildi; JS hatası yok. Masaüstü ve mobil pano görüntüleri incelendi. Bu fiziksel cihaz testi değildir; 17 Ekim’deki 40 Django testinin tamamı bugün tekrar çalıştırılmadı. İş kuralları ve gerçek kullanıcı verileri değiştirilmedi.
+
+Kendi gerekçeleri, Selim/Arda denemesi ve kaptan adaylığına öğretmen yanıtı hâlâ açık; 18 Ekim tasarım hedefi ve 19–21 prova/22 teslim takvimi bu görsel çalışmayla tamamlanmış sayılmaz. İnternet yayını yapılmadı.
+
 ## 17 Ekim — güncel durum ve kalan işler
 
 17 Ekim’de mevcut Django sitesi üzerinden devam edildi. Panoya başlık araması ve durum filtresi; arşive tür/tarih filtresi eklendi. Kapalı kayda yorum yazma, çözülmüş şikâyetle danışman müdahalesi ve yorum temizlerken şikâyeti kendiliğinden kapatma açıkları düzeltildi. Ayrı veritabanında 40 Django testi geçti. Bu kontrol gerçek kullanıcı görüşmesi değildir.
