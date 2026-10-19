@@ -139,3 +139,8 @@ Yukarıdaki çizimler ekranların işlevini gösterir. Gerçek Django sitesinde 
 Tema düğmesi üstte kalır; seçim tarayıcıda hatırlanır. Açık tema açık, koyu tema antrasit/gri yüzeyler kullanır; yeşil küçük vurgudur. Shader etkisi CSS ile sınırlıdır, azaltılmış harekette çalışmaz. İstek açta yan yana görev/talep kartları; panoda başlık/durum/kendi ilişkisi; arşivde tür/tarih filtreleri vardır. Bildirimler gerçek sitede ayrı sayfadır; 12 Ekim demo kutusu gerçek siteyle karıştırılmaz.
 
 Batu’nun verdiği kare Askıda İyilik logosu üstte/sekmede, yazılı logo giriş ekranındadır. Uygulama adı Askıda Görev Panosu olarak kalır. Görsellerin oranı telefonda korunur. Gerçek kullanıcının ekranı önizlemeden farklıysa ekran görüntüsü geri bildirimiyle düzeltilir; otomatik tarayıcı kontrolü fiziksel cihaz teyidi sayılmaz.
+
+
+## 19 Ekim — pano kartlarının ilk görsel iyileştirmesi
+
+Başlık ve açıklama aralıkları rahatlatıldı, takım amacı ayrı hafif kutuda; açan/son tarih/varsa üstlenen tek alt bilgi alanında. İnceleme bağlantısı belirgin ve en az 44px dokunma alanına sahip; telefonda alt sağa yerleşir. Açık/koyu yüzeyler ve yazılı durumlar korunur. Hafif hover yükselmesi/ok hareketi azaltılmış harekette kapanır; yeni iş kuralı veya veri alanı yoktur.

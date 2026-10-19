@@ -195,3 +195,10 @@ Batu bugün ana site geliştirmesini açıkça istedi. Django sitesi yerelde ger
 - `manage.py check` sorun bulmadı. Ayrı test veritabanında 30 Django testi geçti: oturum/rol/sahiplik, form ve ek veri reddi, tek kullanımlık kod, gizli teklif ve bildirim, durum/sürüm çakışması, düzeltme/bırakma/iptal/onay, üyelik devri ve dönem temizliği.
 - Ayrı örnek veritabanı ve ayrı Chrome oturumlarıyla 32 gerçek tarayıcı kontrolü geçti: davetle kayıt, gerçek giriş, kaptanın görev açması, iki teklif/seçim, nazik seçilmeme, sonucun düzeltilmesi/onaylanması/arşiv, danışmana erişim engeli ve 320/390/1280px ana ekranlarda taşma kontrolü. Danışman ekranları 320px'de ayrıca kontrol edildi; JavaScript hatası çıkmadı. Bilgisayar panosu/mobil detay/mobil danışman özeti görüntüleri incelendi. Bu fiziksel telefon veya Selim/Arda kullanıcı testi değildir.
 - Test hesapları gerçek çalışma veritabanında oluşturulmadı. Gerçek ilk danışman hesabı `baslat.bat` ilk açılışında kendi parolasıyla oluşturulur. GitHub gönderimi ve internet yayını ayrıca yapılır.
+
+
+## 19 Ekim — adım 1: pano kartlarının görünümü
+
+Batu görsel geliştirmeleri tek tek istedi ve ilk kart düzenlemesine “tamam yaparım devam et” diyerek devam onayı verdi. Kartlarda başlık/boşluk düzeni, daha yumuşak köşeler ve gölge; alt satırda açan/son tarih/üstlenen bilgisi ve belirgin inceleme bağlantısı uygulandı. Açık temada yeşil vurgu, koyu temada antrasit yüzey korunur. Var olan hafif yükselme hareketine bağlantı okunda küçük hareket eşlik eder; azaltılmış harekette kapanır. CSS sürüm bağlantısı yenilendi.
+
+Ayrı örnek DB/Chrome’da 30 odaklı kontrol geçti: 320/390/1280px iki tema, üç iş durumu, kart alt satırlarının sığması, en az 44px dokunma alanı, detay bağlantısı, üstlenen adının korunması, hover ve azaltılmış hareket. Tek Django render testi yedi sayfayı açtı; kartın açık/koyu görüntüleri incelendi. Önceki tam 40/43/12 kontroller bu küçük görsel değişiklikten önceydi; tamamı tekrar çalıştırılmadı. Gerçek hesap/yedek/iş kuralları değişmedi; yeni push/yayın yok. Sonraki görsel adım kullanıcı değerlendirmesinden sonra düğmeler olabilir.
