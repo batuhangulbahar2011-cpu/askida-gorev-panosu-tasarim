@@ -130,6 +130,28 @@ Parola tekrarı veritabanına yazılmaz; yalnız formda eşleşme kontrolüdür.
 Adaylık satırı, notu ve olay geçmişi istek sahibi/ilgili aday için görünür; danışman bildirilen sorunu inceleyebilir. Ortak istek geçmişine tüm adaylık kayıtları gönderilmez. Parola yenileme/kayıt kodu alanları ortak yorum veya istek olayına yazılmaz. Dönem temizliği ilgili site içi bildirimleri de kapsar. Süresi dolan teknik kodlar temizlenir; şifre/oturum yenileme verileri arşiv veya Git deposuna konmaz.
 
 
+## Kod ve bildirim alanlarının tek tek gerekçeleri — 19 Ekim
+
+Üstteki toplu alan listesi aşağıda açılmıştır. Yeni kişisel veri veya ürün özelliği eklenmez. Ana sitede kayıt ve parola yenileme kodları ayrı tablo yerine aynı `Code` modelinde `kind` ile ayrılır.
+
+| Uygulama alanı | Neden tutulur? / sınır |
+|---|---|
+| codes.id | Kodu ham değeriyle göstermeden iptal/temizlik işleminde tanımlamak. |
+| codes.code_hash | Girilen kodu doğrulamak; ham kodu kalıcı saklamamak. |
+| codes.kind | Kayıt kodunun parola yenilemek veya yenileme kodunun kayıt olmak için kullanılmasını önlemek. |
+| codes.user_id | Parola yenilemesini yalnız hedef hesaba bağlamak; kayıt kodunda boştur. |
+| codes.created_by_id | Kodu hangi yetkili hesabın ürettiğini izlemek; ilk danışmanın bakım kurtarmasında boş olabilir. |
+| codes.created_at | Üretim zamanını ve teknik saklama süresini belirlemek. |
+| codes.expires_at | Kayıt için 7 gün, parola yenileme için 24 saat sonrasını doğrulamak. |
+| codes.used_at | Tek kullanımın tüketildiğini ve ne zaman olduğunu bilmek; aynı kodu tekrar reddetmek. |
+| codes.revoked_at | Kullanılmadan iptal edilmiş kodu reddetmek; ortak Code modelinde iki kod türünde de alan vardır. |
+| notifications.id | Alıcının belirli bir bildirimi açıp okundu işaretleyebilmesi. |
+| notifications.recipient_id | Bildirimi yalnız doğru kişiye göstermek; başkasının bildirimine erişimi engellemek. |
+| notifications.request_id | Bildirimi ilgili isteğin detayına bağlamak; dönem silinince bağlı bildirimi de temizlemek. |
+| notifications.kind | Teklif, kabul, seçilmeme, sonuç veya düzeltme metnini belirlemek; serbest gizli teklif notu taşımamak. |
+| notifications.created_at | Bildirimleri zamana göre sıralamak. |
+| notifications.read_at | Okunmamış sayısını ve okundu durumunu belirlemek; kişi performansı ölçütü değildir. |
+
 ## Ana site — Django teknik alanları (13 Ekim)
 
 Gerçek uygulamada tasarımdaki `users.name/role/active` Django özel kullanıcı modelindeki `name/role/is_active` alanlarıdır; parola özeti `password` alanında tutulur. İstek/adaylık/not alanları yukarıdaki modelle eşleşir. E-posta, first_name/last_name alanları kaldırılmıştır; yalnız ad istenir. Django'nun AbstractUser altyapısı aşağıdaki teknik alanları da sağlar; ürün rolü her zaman `role` alanından denetlenir, personel bayrağı site rolünü değiştirmez.

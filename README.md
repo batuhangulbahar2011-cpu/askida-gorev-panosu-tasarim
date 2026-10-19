@@ -4,6 +4,14 @@ Bu tasarım, Askıda İyilik takımının takım görevlerini ve kişisel yardı
 
 **Karar geçmişi (9–12 Ekim):** 2026-10-09 tarihinde akış kararları güncellendi. Belgedeki zorunlu kurallar uygulanmıştır; gerekçeli bırakma Batu tarafından kabul edildi. 10 Ekim öğretmen geri bildirimiyle onay takibi sadeleştirildi: 12 saatlik hatırlatma kaldırıldı, yalnız 48 saat danışman eşiği kaldı; saklanan durumlar beşten dörde indi. Son tarih kararı Batu tarafından Codex'e bırakıldı: görevde zorunlu, talepte isteğe bağlı. Dönem sonrası 90 günlük kayıt saklama Batu tarafından kabul edildi; 12 Ekim’de Batu gerçek uygulama için Django’yu seçti. Bu metin AI desteğiyle hazırlanmıştır; Batu gerekçeleri anlayıp kendi görüşüne göre düzenlemeden nihai teslim sayılmaz.
 
+## 19 Ekim — sunum hazırlığı
+
+[Beş dakikalık çalışma notları ve prova formu](SUNUM-HAZIRLIK-19-EKIM.md) hazırlandı: süre hedefli anlatım, örnek demo yolu, soru kartları ve gerçek prova kaydı alanı. Bu AI destekli hazırlık taslağıdır; Batu'nun kendi gerekçeleri veya yapılmış prova olarak gösterilmez.
+
+19 Ekim tam tekrar kontrolde 40 Django testi ve ayrı örnek veritabanında 43 Chrome akış kontrolü geçti. `manage.py check`, şema değişikliği kontrolü, paket tutarlılığı ve iki JavaScript dosyasının sözdizimi sorunsuz. Sekiz zorunlu belge ve yerel Markdown bağlantıları yeniden kontrol edildi. Kod/bildirim alanlarının tek tek gerekçeleri veri.md'de tamamlandı. Uygulama kodu ve gerçek kullanıcı verileri değiştirilmedi. Tema ve mobil menü için 12 ek odaklı Chrome kontrolü de geçti; açık/koyu görüntüler incelendi. Bu gerçek telefon/kullanıcı denemesi değildir. Görev PDF’si kayıtlı Masaüstü konumunda bulunamadığından kapsam önceki kaynaklı inceleme notuna göre karşılaştırıldı; asıl PDF bugün yeniden doğrulanamadı. Güncel öğrenci gerekçeleri/sunum belgeleri yerelde kaydedildi; GitHub’daki son doğrulanan sürüm hâlâ 18 Ekim f662acd, yeni gönderim yapılmadı.
+
+**Batu'nun 19 Ekim yanıtı:** Django kendisine daha kullanışlı geldiği için seçti; görevi açan kişi uygun kişiyi seçebilmek için bir aday belirlemeli. Bunlar kullanıcının kısa açıklamalarıdır, ölçülmüş teknoloji karşılaştırması değildir. Batu sonuç onayını da açıkladı: iş yarım kalmış veya yapan kişi yanlışlıkla bitti demiş olabilir; isteyen kişinin de kontrolü iki tarafın sonuçta anlaşmasını sağlar. Üç kısa gerekçe alındı; ilk sesli prova süresi bekliyor. Batu Selim/Arda denemesi ve öğretmen görüşmesini henüz yapmadığını bildirdi; bekliyor. Fiziksel telefon son sürüm teyidi ayrı açık iş. 20–21 Ekim prova, 22 Ekim teslim planı sürüyor. Site geliştirme bir sonraki çalışma olarak ele alınacak; bu hazırlıkta yeni özellik, hesap değişikliği veya internet yayını yapılmadı.
+
 ## 18 Ekim — teslim öncesi son kontrol
 
 Teknik dosya ve uygulama kontrolü tamamlandı; aşağıdaki açık öğrenci/görüşme işleri nedeniyle bütün teslim koşulları bitmiş sayılmıyor. Alt bölümler önceki aşamaların o günkü kayıtlarını korur.

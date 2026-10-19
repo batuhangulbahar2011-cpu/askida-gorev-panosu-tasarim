@@ -71,3 +71,8 @@ Kaynaklar: [Ücretsiz plan](https://help.pythonanywhere.com/pages/FreeAccountsFe
 PythonAnywhere resmî ücretsiz planı 17 Ekim’de tekrar kontrol edildi: 1 web uygulaması/1 worker, 512 MiB alan ve 1 aylık uzatma takibi var. Yeni ücretsiz hesapta zamanlanmış görev yok; bu nedenle otomatik günlük temizlik/yedek çalışacağı varsayılamaz. Bakım sahibi Batu, teknik_temizle ve donem_temizle komutlarının takibini ANA-SITE.md üzerinden yapmalı; otomatik zamanlayıcı ayrıca kurulmadan işletilmiş sayılmaz. Kaynak: [güncel ücretsiz hesap özellikleri](https://help.pythonanywhere.com/pages/FreeAccountsFeatures/), [2026 değişikliği](https://blog.pythonanywhere.com/221/). Hesap açılışı ve internet yayını henüz yapılmadı.
 
 Batu’nun 17 Ekim kendi açıklaması henüz alınmadı. README’deki kısa gerekçe soruları bunun için var; yukarıdaki asistan açıklaması öğrenci cevabının yerini tutmaz.
+
+
+## 19 Ekim — Batu’nun kısa açıklaması
+
+Batu, Django’yu neden seçtiği sorusuna “Django daha kulanışrı olduğu için” yanıtını verdi (kullanıcı beyanı; yazım düzeltilmiş biçimi: “Django daha kullanışlı olduğu için”). Bu kendisine kullanışlı gelmesidir; ölçülmüş üstünlük veya bağımsız Django deneyimi iddiası değildir. Sunum çalışmasında hangi özelliğini kullanışlı bulduğunu örnekle açıklaması hâlâ yararlı olacaktır.

@@ -69,3 +69,10 @@ Site içi bildirim simgesi yalnız kişinin kendi bildirimlerini gösterir; tık
 ## 17 Ekim uygulama netleştirmesi
 
 Kapalı istekte yeni ortak yorum sunucuda reddedilir; geçmiş okunur ve danışmana gerekçeli itiraz bildirilebilir. Çözülmüş eski bildirim tek başına yeni danışman müdahalesi yetkisi vermez; açık bildirim, güncel gecikme veya 48 saat aşımı gerekir. Kişisel veri içeren yorumu temizlemek diğer şikâyet konularını kendiliğinden çözmez; danışman incelemeyi ayrıca tamamlar.
+
+
+## 19 Ekim — Batu’nun sonuç onayı gerekçesi
+
+Batu’nun kendi açıklaması, anlamı korunarak yazım düzenlendi: “İş henüz bitmemiş veya yarım kalmış olabilir; yapan kişi yanlışlıkla bitti diyebilir. İşi isteyen kişi de sonucu kontrol edip onaylarsa iki tarafın da işin bittiği konusunda anlaşması daha uygun olur.”
+
+Bu, mevcut Yapıldı → onay bekliyor → sahip onayı akışının kullanıcı gerekçesidir. Yeni bir üçüncü onay adımı eklemez; 48 saat sonra gerekçeli danışman incelemesi ve düzeltme/bırakma yolları korunur.
