@@ -63,6 +63,28 @@ class RequestForm(StrictFields, forms.ModelForm):
         else:
             self.fields.pop('date_reason')
         self.fields['team_purpose'].help_text = 'Görev yalnız takım işi içindir. Kişisel ihtiyacınız için Yardım talebi seçin.'
+        examples = {
+            'title': (
+                'Örneğin: Takım tanıtım videosunu hazırlama',
+                'Örneğin: Arduino servo motor bağlantısında yardım',
+            ),
+            'description': (
+                'Örneğin: Projemizi tanıtan 3 dakikalık bir video hazırlanacak. Çekim ve kurgu için destek gerekiyor.',
+                'Örneğin: Servo motoru bağladım ama çalıştıramadım. Bağlantıları birlikte kontrol edebilir miyiz?',
+            ),
+            'team_purpose': (
+                'Örneğin: Projemizi sunumda anlaşılır biçimde tanıtmak.',
+                '',
+            ),
+        }
+        task = self['kind'].value() == 'gorev'
+        for name, (task_example, help_example) in examples.items():
+            self.fields[name].widget.attrs.update({
+                'placeholder': task_example if task else help_example,
+                'data-placeholder-task': task_example,
+                'data-placeholder-help': help_example,
+            })
+
     def clean(self):
         data = super().clean()
         if data.get('kind') == 'gorev':

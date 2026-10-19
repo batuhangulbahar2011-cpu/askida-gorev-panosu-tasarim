@@ -8,6 +8,9 @@
   function update() {
     const task = radios.some(input => input.checked && input.value === 'gorev');
     radios.forEach(input => input.closest('.type-option').classList.toggle('selected', input.checked));
+    form.querySelectorAll('[data-placeholder-task]').forEach(field => {
+      field.placeholder = task ? field.dataset.placeholderTask : field.dataset.placeholderHelp;
+    });
     purpose.hidden = !task;
     purposeInput.required = task;
     due.required = task;

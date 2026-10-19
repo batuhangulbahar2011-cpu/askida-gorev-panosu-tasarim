@@ -144,3 +144,8 @@ Batu’nun verdiği kare Askıda İyilik logosu üstte/sekmede, yazılı logo gi
 ## 19 Ekim — pano kartlarının ilk görsel iyileştirmesi
 
 Başlık ve açıklama aralıkları rahatlatıldı, takım amacı ayrı hafif kutuda; açan/son tarih/varsa üstlenen tek alt bilgi alanında. İnceleme bağlantısı belirgin ve en az 44px dokunma alanına sahip; telefonda alt sağa yerleşir. Açık/koyu yüzeyler ve yazılı durumlar korunur. Hafif hover yükselmesi/ok hareketi azaltılmış harekette kapanır; yeni iş kuralı veya veri alanı yoktur.
+
+
+## 19 Ekim — istek formunda gri örnekler
+
+Batu’nun ekran örneğine göre görev/talep başlık ve açıklama alanlarına, görevde takım amacına nötr gri örnek metinler eklendi. Tür değişince örnek değişir; girilmiş değer silinmez. Örnekler form değeri değildir, kayıt olarak gönderilmez. Sunucu ilk türün örneğini JavaScript olmadan da verir. 19 odaklı Chrome kontrolü ve yedi sayfalık tek render testi geçti; görev/talep görüntüleri incelendi.

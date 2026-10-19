@@ -87,3 +87,7 @@ body{isolation:isolate}body:before{content:'';position:fixed;inset:0;z-index:0;p
 @media(max-width:520px){.request-card{padding:1.2rem 1.1rem;border-radius:17px}.request-card h2{font-size:1.12rem;line-height:1.45}.request-card>p{font-size:.88rem}.request-card .card-footer{align-items:flex-start;flex-direction:column;gap:.8rem}.request-card .meta{font-size:.76rem}.request-card .detail-link{align-self:flex-end}.request-card .card-purpose{padding:.7rem .8rem;font-size:.79rem}}
 @media(prefers-reduced-motion:no-preference){.request-card .card-arrow{transition:transform .18s ease}.request-card .detail-link{transition:border-color .18s ease,background-color .18s ease}}
 @media(hover:hover) and (prefers-reduced-motion:no-preference){.request-card:hover{box-shadow:var(--card-hover-shadow)}.request-card .detail-link:hover .card-arrow{transform:translateX(3px)}}
+
+/* Boş istek alanlarında kısa, nötr gri örnekler. */
+.create-form input::placeholder,.create-form textarea::placeholder{color:#77827b;opacity:1}
+[data-theme=dark] .create-form input::placeholder,[data-theme=dark] .create-form textarea::placeholder{color:#9da3ad;opacity:1}
